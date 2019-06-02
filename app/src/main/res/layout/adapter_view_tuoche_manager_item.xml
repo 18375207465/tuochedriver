@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/activity_bg_color" android:paddingLeft="8dp" android:paddingRight="8dp" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+            <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/img_user" android:layout_width="45dp" android:layout_height="45dp" android:layout_marginLeft="12dp" android:src="@mipmap/icon_account" android:layout_centerVertical="true"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_toRightOf="@+id/img_user" android:layout_centerVertical="true">
+                <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/txt_title_color" android:id="@+id/txt_name_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="胡八一(18585886742)"/>
+                <TextView android:textColor="@color/txt_info_color" android:id="@+id/txt_type" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="3吨板车"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="5dp"/>
+        <RelativeLayout android:gravity="center_vertical" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="40dp">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <TextView android:textSize="@dimen/txt_size_14sp" android:textColor="@color/color_ffffff" android:id="@+id/txt_btn_delete" android:background="@drawable/bg_common_red_btn" android:paddingLeft="12dp" android:paddingTop="7dp" android:paddingRight="12dp" android:paddingBottom="7dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="删除"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

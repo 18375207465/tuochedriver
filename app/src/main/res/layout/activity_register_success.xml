@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/activity_bg_color" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="注册成功" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="100dp" android:src="@mipmap/success"/>
+    <TextView android:textColor="@color/txt_info_color" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="请耐心等待管理员授权"/>
+    <Button android:enabled="true" android:gravity="center" android:id="@+id/sure" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginLeft="30dp" android:layout_marginTop="30dp" android:layout_marginRight="30dp" android:text="确定" style="@style/LoginRedBtn"/>
+</LinearLayout>

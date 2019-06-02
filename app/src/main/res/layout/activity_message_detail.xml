@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@color/activity_bg_color" android:layout_width="match_parent" android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="消息详情" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+        <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_title_color" android:id="@+id/txt_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="拖车已上路"/>
+        <TextView android:textColor="@color/txt_info_color" android:id="@+id/txt_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="20dp" android:layout_marginRight="20dp" android:text="拖车已经在路上,请耐心等待拖车已经在路上,请耐心等待拖车已经在路上"/>
+        <TextView android:textColor="@color/txt_info_color" android:id="@+id/txt_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="15dp" android:layout_marginRight="20dp" android:text="2017年2月07日"/>
+    </LinearLayout>
+    <com.framework.app.component.widget.DataLoadingView android:id="@+id/data_loadingview" android:layout_width="match_parent" android:layout_height="match_parent"/>
+</RelativeLayout>

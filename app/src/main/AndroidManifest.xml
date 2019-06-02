@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tuochebang.service"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:targetSdkVersion="23" />
+
+    <uses-permission android:name="com.wothing.yiqimei.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <application
+        android:name="com.tuochebang.service.app.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launch_service"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.tuochebang.service.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tuochebang.service.ui.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize" />
+        <activity
+            android:name="com.tuochebang.service.widget.wxphotoselector.WxPhotoSelectorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.SelectPhotoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SelectPhotoDialogStyle" />
+        <activity
+            android:name="com.tuochebang.service.ui.returns.UserReturnsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.register.admin.IdCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.register.admin.CompanyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.returns.ReturnDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.register.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize" />
+        <activity
+            android:name="com.tuochebang.service.ui.user.UserInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.tuochebang.service.ui.CommonEditActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name="com.tuochebang.service.ui.SelectItemActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/transcutestyle" />
+        <activity
+            android:name="com.tuochebang.service.ui.LocationMapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.returns.PublishReturnActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.request.WatingRequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.user.UserTuocheManagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.user.UserAuthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.request.UserRequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.user.UserMessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.request.ApplyTuocheRequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.PayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.user.MessageDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.request.WaitingRequestDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.request.RobOrderSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.register.RegisterSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tuochebang.service.ui.user.UserChargeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" />
+        <activity
+            android:name="com.tuochebang.service.ui.returns.SelectLocationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SelectPhotoDialogStyle" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="22a30a7c1564843b2c632581c64d6d50" />
+        <service android:name="com.amap.api.location.APSService" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+</manifest>

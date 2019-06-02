@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="@color/activity_bg_default" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="输入起点" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:gravity="center_vertical" android:id="@+id/search_bar_layout" android:background="@color/color_ffffff" android:paddingLeft="20dp" android:paddingRight="12dp" android:layout_width="match_parent" android:layout_height="48dp">
+            <AutoCompleteTextView android:textSize="14sp" android:textColor="@color/txt_info_color" android:textColorHint="@color/txt_info_color" android:layout_gravity="center_vertical" android:id="@+id/input_edittext" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="4dp" android:hint="输入地址, 智能提示" android:singleLine="true" android:inputType="textAutoComplete"/>
+        </RelativeLayout>
+        <ListView android:id="@+id/inputlist" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="12dp" android:layout_marginTop="12dp" android:layout_marginRight="12dp" android:listSelector="@android:color/transparent" android:divider="@color/activity_bg_color" android:dividerHeight="1dp" android:layout_below="@+id/search_bar_layout"/>
+    </RelativeLayout>
+</LinearLayout>

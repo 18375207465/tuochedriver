@@ -1,0 +1,1 @@
+include ':app', ':appcomponent', ':picture_library', ':ucrop'

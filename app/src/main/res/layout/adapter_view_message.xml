@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/activity_bg_color" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:textSize="@dimen/txt_size_12sp" android:textColor="@color/color_ffffff" android:layout_gravity="center_horizontal" android:id="@+id/txt_time" android:background="@drawable/bg_message_time_nor" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="昨天"/>
+    <RelativeLayout android:background="@color/color_ffffff" android:paddingLeft="12dp" android:paddingRight="12dp" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginLeft="12dp" android:layout_marginTop="12dp" android:layout_marginRight="12dp">
+        <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_title_color" android:id="@+id/txt_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="拖车已经在路上了,请耐心等待" android:layout_centerVertical="true"/>
+    </RelativeLayout>
+</LinearLayout>

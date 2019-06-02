@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@color/activity_bg_color" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="选择照片" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <Button android:textSize="16sp" android:textColor="@color/color_ffffff" android:layout_gravity="right" android:id="@+id/tcb_right_txt" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="提交"/>
+    </android.support.v7.widget.Toolbar>
+    <GridView android:gravity="center" android:id="@+id/id_gridView" android:clipChildren="true" android:layout_width="match_parent" android:layout_height="match_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:horizontalSpacing="3dp" android:verticalSpacing="3dp" android:stretchMode="columnWidth" android:numColumns="3" android:layout_below="@+id/toolbar"/>
+    <RelativeLayout android:background="#e0000000" android:clickable="true" android:layout_width="match_parent" android:layout_height="50dp" android:layout_alignParentBottom="true">
+        <TextView android:textColor="@android:color/white" android:gravity="center_vertical" android:id="@+id/id_choose_dir" android:paddingLeft="13dp" android:paddingRight="13dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="所有图片" android:layout_alignParentLeft="true" android:layout_centerVertical="true"/>
+        <TextView android:textColor="@android:color/white" android:gravity="center" android:id="@+id/id_total_count" android:paddingLeft="13dp" android:paddingRight="13dp" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="预览" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+    </RelativeLayout>
+</RelativeLayout>

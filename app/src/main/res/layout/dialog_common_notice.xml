@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/layout_root" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:layout_marginRight="30dp">
+    <LinearLayout android:orientation="vertical" android:background="@color/color_ffffff" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25dp">
+        <TextView android:textColor="@color/txt_title_color" android:layout_gravity="center_horizontal" android:id="@+id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25dp" android:text="title"/>
+        <TextView android:textColor="@color/txt_info_color" android:layout_gravity="center_horizontal" android:id="@+id/tv_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="content"/>
+        <LinearLayout android:orientation="vertical" android:id="@+id/ll_choice" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1px" android:layout_marginTop="12dp"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
+                <Button android:textColor="@color/txt_title_color" android:id="@+id/btn_cancel" android:background="@null" android:layout_width="match_parent" android:layout_height="21dp" android:text="取消" android:layout_toLeftOf="@+id/view_divider" android:layout_alignParentLeft="true"/>
+                <View android:id="@+id/view_divider" android:layout_width="1px" android:layout_height="10dp" android:layout_centerInParent="true"/>
+                <Button android:textColor="@color/txt_title_color" android:id="@+id/btn_ok" android:background="@null" android:layout_width="match_parent" android:layout_height="21dp" android:text="确定" android:layout_toRightOf="@+id/view_divider" android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/ll_dismiss" android:background="@android:color/transparent" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="50dp"/>
+    <ImageView android:id="@+id/iv_icon" android:layout_width="50dp" android:layout_height="50dp" android:src="@mipmap/popup_tips_success" android:scaleType="fitXY" android:layout_centerHorizontal="true"/>
+</RelativeLayout>

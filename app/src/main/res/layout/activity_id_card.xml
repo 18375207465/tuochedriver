@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="法人身份證" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="20dp" android:layout_marginRight="12dp">
+        <ImageView android:id="@+id/img_correct_side" android:layout_width="match_parent" android:layout_height="150dp" android:src="@mipmap/basemap" android:scaleType="centerCrop"/>
+        <TextView android:textColor="@color/color_ffffff" android:gravity="center" android:background="@mipmap/icon_orange" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="正面"/>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="20dp" android:layout_marginRight="12dp">
+        <ImageView android:id="@+id/img_opposite_side" android:layout_width="match_parent" android:layout_height="150dp" android:src="@mipmap/basemap" android:scaleType="centerCrop"/>
+        <TextView android:textColor="@color/color_ffffff" android:gravity="center" android:background="@mipmap/icon_blue" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="反面"/>
+    </RelativeLayout>
+    <Button android:enabled="true" android:gravity="center" android:id="@+id/next" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginLeft="30dp" android:layout_marginTop="30dp" android:layout_marginRight="30dp" android:text="下一步" style="@style/LoginRedBtn"/>
+</LinearLayout>

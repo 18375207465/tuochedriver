@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/activity_bg_color" android:paddingLeft="8dp" android:paddingRight="8dp" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="68dp" android:layout_marginTop="10dp">
+        <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/img_user" android:layout_width="45dp" android:layout_height="45dp" android:layout_marginLeft="12dp" android:src="@mipmap/icon_account" android:layout_centerVertical="true"/>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_toRightOf="@+id/img_user" android:layout_centerVertical="true">
+            <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:id="@+id/txt_name_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="胡八一(18585886742)"/>
+            <TextView android:textColor="@color/txt_info_color" android:id="@+id/txt_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="3吨板车"/>
+        </LinearLayout>
+        <RadioButton android:textSize="16sp" android:textColor="@color/txt_title_color" android:id="@+id/pay_method_rb" android:focusable="false" android:clickable="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:checked="false" android:button="@null" android:drawableRight="@drawable/bg_checkbox_collect" android:layout_centerVertical="true"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/ll_container" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/txt_title_color" android:gravity="center" android:id="@+id/tcb_selct_title" android:background="#f2f3f4" android:layout_width="match_parent" android:layout_height="38dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:text="修改头像"/>
+        <ListView android:id="@+id/lv_list" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:layout_centerInParent="true"/>
+    </LinearLayout>
+</RelativeLayout>

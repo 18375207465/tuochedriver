@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppComponent</string>
+
+    <!-- 下拉控件 -->
+    <string name="xlistview_header_hint_title">Wothing</string>
+    <string name="xlistview_header_hint_normal">下拉即可刷新</string>
+    <string name="xlistview_header_hint_ready">松开后刷新</string>
+    <string name="xlistview_header_hint_refreshing">正在刷新\u2026</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal"></string>
+    <string name="xlistview_footer_hint_ready">松开后加载</string>
+    <string name="xlistview_footer_hint_loading">正在加载\u2026</string>
+    <string name="xlistview_footer_newest_time">1分钟前</string>
+    <string name="pull_to_refresh_header_normal">下拉刷新</string>
+    <string name="pull_to_refresh_header_ready">松开后刷新</string>
+    <string name="pull_to_refresh_header_refreshing">正在刷新\u2026</string>
+    <string name="pull_to_refresh_footer_normal">上拉加载更多</string>
+    <string name="pull_to_refresh_footer_ready">松开后加载</string>
+    <string name="pull_to_refresh_footer_loading">正在加载\u2026</string>
+
+    <!-- DataLoadingView -->
+    <string name="txt_click_here_to_reload">点击此处重新加载</string>
+
+</resources>

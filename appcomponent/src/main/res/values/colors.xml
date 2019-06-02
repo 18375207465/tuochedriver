@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="xlistview_title_color">#000000</color>
+    <color name="xlistview_refres_time_color">#868686</color>
+    <color name="bg_xlistview_empty_view">#ffffff</color>
+    <color name="xlistview_empty_view_txt_color">#808080</color>
+    <!-- 纯白色 -->
+    <color name="color_ffffff">#ffffff</color>
+     <!-- 纯白色 -->
+    <drawable name="color_ffffff">#ffffff</drawable>
+    <!-- 正文标题 -->
+    <color name="txt_title_color">#333333</color>
+    <!-- 说明文字 -->
+    <color name="txt_info_color">#a6a6a6</color>
+     <!-- 分割线颜色 -->
+    <color name="common_line_color">#e9e9e9</color>
+     <!-- stepbar颜色 -->
+    <color name="txt_common_red_color">#ff6666</color>
+
+
+
+
+</resources>

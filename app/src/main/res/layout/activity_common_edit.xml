@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="联系电话" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <TextView android:textSize="16sp" android:textColor="@color/color_ffffff" android:layout_gravity="right" android:id="@+id/tcb_sure_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16dp" android:text="确定"/>
+    </android.support.v7.widget.Toolbar>
+    <EditText android:textSize="16sp" android:textColorHint="@color/txt_info_color" android:gravity="left" android:id="@+id/tcb_edit_info_ed" android:background="@color/color_ffffff" android:padding="10dp" android:clickable="true" android:layout_width="match_parent" android:layout_height="200dp"/>
+</LinearLayout>

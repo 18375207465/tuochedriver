@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@mipmap/logo_background" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:id="@+id/tcb_scroll" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:background="@mipmap/logo_background" android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <RelativeLayout android:id="@+id/login_layout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="80dp" android:layout_marginRight="20dp" android:layout_centerVertical="true">
+                    <FrameLayout android:gravity="center" android:id="@+id/username_layout" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <EditText android:textColor="@color/common_red_color" android:textColorHint="@color/txt_info_color" android:layout_gravity="bottom" android:id="@+id/username" android:background="@color/color_ffffff" android:paddingRight="60dp" android:layout_width="335dp" android:layout_height="55dp" android:layout_marginLeft="40dp" android:hint="请输入手机号" android:maxLength="20" android:inputType="number"/>
+                        <ImageView android:layout_gravity="left|center_vertical|center_horizontal|center" android:background="@mipmap/icon_account" android:visibility="visible" android:layout_width="22dp" android:layout_height="21dp" android:layout_marginLeft="12dp"/>
+                        <TextView android:textSize="18sp" android:textColor="@android:color/black" android:gravity="center" android:layout_gravity="left|center_vertical|center_horizontal|center" android:id="@+id/contry_sn" android:visibility="invisible" android:layout_width="40dp" android:layout_height="50dp" android:layout_marginTop="4dp" android:text="+62"/>
+                        <Button android:layout_gravity="right|center_vertical|center_horizontal|center" android:id="@+id/bt_username_clear" android:background="@mipmap/icon_fork" android:visibility="gone" android:layout_width="23dp" android:layout_height="23dp" android:layout_marginRight="10dp"/>
+                    </FrameLayout>
+                    <FrameLayout android:gravity="center" android:id="@+id/usercode_layout" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:layout_below="@+id/username_layout">
+                        <EditText android:textColor="@color/common_red_color" android:textColorHint="@color/txt_info_color" android:id="@+id/password" android:background="@color/color_ffffff" android:paddingRight="60dp" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginLeft="40dp" android:hint="请输入密码" android:maxLength="20" android:inputType="textPassword"/>
+                        <ImageView android:layout_gravity="left|center_vertical|center_horizontal|center" android:background="@mipmap/icon_nock" android:layout_width="24dp" android:layout_height="22dp" android:layout_marginLeft="12dp"/>
+                        <Button android:layout_gravity="right|center_vertical|center_horizontal|center" android:id="@+id/bt_pwd_clear" android:background="@mipmap/icon_fork" android:visibility="invisible" android:layout_width="23dp" android:layout_height="23dp" android:layout_marginRight="10dp"/>
+                    </FrameLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="48dp" android:weightSum="2" android:layout_alignParentBottom="true">
+        <TextView android:textColor="@color/color_ffffff" android:gravity="center" android:layout_gravity="center" android:id="@+id/txt_btn_login" android:background="#d5333d" android:layout_width="0dp" android:layout_height="match_parent" android:text="登录" android:layout_weight="1"/>
+        <TextView android:textColor="@color/color_ffffff" android:gravity="center" android:layout_gravity="center" android:id="@+id/txt_user_register" android:background="#bb2025" android:layout_width="0dp" android:layout_height="match_parent" android:text="新用户注册" android:layout_weight="1"/>
+    </LinearLayout>
+</RelativeLayout>

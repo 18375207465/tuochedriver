@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="返程车详情" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <TextView android:textSize="16sp" android:textColor="@color/color_ffffff" android:layout_gravity="right" android:id="@+id/tcb_pay_txt" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16dp" android:text="去支付"/>
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical" android:id="@+id/ll_order_info" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RelativeLayout android:gravity="center_vertical" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="48dp">
+                    <TextView android:textColor="@color/txt_info_color" android:id="@+id/txt_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="2017-01-25 12:00:00"/>
+                    <TextView android:textColor="@color/txt_info_color" android:id="@+id/txt_order_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:text="订单号:17349349351834199" android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <RelativeLayout android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="60dp">
+                    <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/img_user" android:layout_width="45dp" android:layout_height="45dp" android:layout_marginLeft="12dp" android:src="@mipmap/icon_account" android:layout_centerVertical="true"/>
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_toRightOf="@+id/img_user" android:layout_centerVertical="true">
+                        <TextView android:textColor="@color/txt_title_color" android:id="@+id/txt_company_name" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:textColor="@color/txt_info_color" android:id="@+id/txt_user_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+                    <ImageView android:id="@+id/img_call" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:src="@mipmap/icon_call" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@color/activity_bg_color" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp">
+                <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+                <RelativeLayout android:background="@color/color_ffffff" android:paddingLeft="12dp" android:paddingRight="12dp" android:layout_width="match_parent" android:layout_height="48dp">
+                    <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:text="起点" android:layout_centerVertical="true"/>
+                    <TextView android:textSize="16sp" android:textColor="@color/txt_info_color" android:gravity="right|center_vertical|center_horizontal|center" android:id="@+id/tcb_return_begin_txt" android:background="@null" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="60dp" android:text="青羊区 琴台路157号" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="20dp"/>
+                <RelativeLayout android:background="@color/color_ffffff" android:paddingLeft="12dp" android:paddingRight="12dp" android:layout_width="match_parent" android:layout_height="48dp">
+                    <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:text="终点" android:layout_centerVertical="true"/>
+                    <TextView android:textSize="16sp" android:textColor="@color/txt_info_color" android:gravity="right|center_vertical|center_horizontal|center" android:id="@+id/tcb_return_end_txt" android:background="@null" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="60dp" android:text="武侯立交只信丽都花园10号" android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="40dp">
+                    <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="预估价格"/>
+                    <TextView android:textSize="18sp" android:textColor="@color/txt_common_red_color" android:id="@+id/txt_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="¥216.00"/>
+                </LinearLayout>
+                <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+                <LinearLayout android:orientation="vertical" android:background="@color/activity_bg_color" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                    <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+                    <RelativeLayout android:background="@color/color_ffffff" android:paddingLeft="12dp" android:paddingRight="12dp" android:layout_width="match_parent" android:layout_height="48dp">
+                        <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:text="司机姓名" android:layout_centerVertical="true"/>
+                        <TextView android:textSize="16sp" android:textColor="@color/txt_info_color" android:gravity="right|center_vertical|center_horizontal|center" android:id="@+id/tcb_driver_username_txt" android:background="@null" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="60dp" android:text="小茜茜" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="20dp"/>
+                    <RelativeLayout android:background="@color/color_ffffff" android:paddingLeft="12dp" android:paddingRight="12dp" android:layout_width="match_parent" android:layout_height="48dp">
+                        <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:text="联系电话" android:layout_centerVertical="true"/>
+                        <TextView android:textSize="16sp" android:textColor="@color/txt_info_color" android:gravity="right|center_vertical|center_horizontal|center" android:id="@+id/tcb_driver_phone_txt" android:background="@null" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="60dp" android:text="18585886742" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="20dp"/>
+                    <RelativeLayout android:background="@color/color_ffffff" android:paddingLeft="12dp" android:paddingRight="12dp" android:layout_width="match_parent" android:layout_height="48dp">
+                        <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:text="板车类型" android:layout_centerVertical="true"/>
+                        <TextView android:textSize="16sp" android:textColor="@color/txt_info_color" android:gravity="right|center_vertical|center_horizontal|center" android:id="@+id/tcb_driver_type_txt" android:background="@null" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="60dp" android:text="5吨板车" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <com.framework.app.component.widget.DataLoadingView android:id="@+id/data_loadingview" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        <ImageView android:id="@+id/img_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginRight="10dp" android:src="@mipmap/icon_inhand" android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</LinearLayout>

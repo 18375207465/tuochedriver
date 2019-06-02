@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="xlistview_title_size">14sp</dimen>
+    <dimen name="xlistview_refresh_time_size">12sp</dimen>
+    <dimen name="xlistview_empty_view_txt_size">16sp</dimen>
+</resources>

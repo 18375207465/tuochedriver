@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.tuochebang.service"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "5b02d3c648bafd038f5d73da", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-tuochebang", //暂时填写默认值即可.
+        ]
+    }
+    buildTypes {
+        release {
+            aaptOptions.cruncherEnabled = false
+            aaptOptions.useNewCruncher = false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            aaptOptions.cruncherEnabled = false
+            aaptOptions.useNewCruncher = false
+            minifyEnabled false
+        }
+    }
+    // 移除lint检查的error
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.yanzhenjie.nohttp:nohttp:1.1.11'
+    //implementation 'com.yanzhenjie.nohttp:okhttp:1.0.3'
+    compile 'com.amap.api:map2d:5.2.0'
+    compile 'com.amap.api:navi-3dmap:6.7.0_3dmap6.8.0'
+    compile 'com.amap.api:search:6.5.0.1'
+    compile 'com.amap.api:location:3.3.0'
+    compile 'com.alibaba:fastjson:1.2.41'
+    compile 'com.aliyun.dpa:oss-android-sdk:2.5.0'
+    compile 'com.contrarywind:Android-PickerView:4.1.8'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    compile 'cn.jiguang.sdk:jpush:3.3.0'
+    compile 'cn.jiguang.sdk:jcore:2.0.1'
+    implementation 'com.wdullaer:materialdatetimepicker:2.1.1'
+    implementation project(path: ':appcomponent')
+}

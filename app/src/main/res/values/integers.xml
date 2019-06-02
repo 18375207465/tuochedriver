@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="abc_max_action_buttons">2</integer>
+    <integer name="abc_config_activityDefaultDur">220</integer>
+    <integer name="abc_config_activityShortDur">150</integer>
+    <integer name="cancel_button_image_alpha">127</integer>
+    <integer name="cpv_default_anim_duration">4000</integer>
+    <integer name="cpv_default_anim_steps">3</integer>
+    <integer name="cpv_default_anim_swoop_duration">5000</integer>
+    <integer name="cpv_default_anim_sync_duration">500</integer>
+    <integer name="cpv_default_max_progress">100</integer>
+    <integer name="cpv_default_progress">0</integer>
+    <integer name="cpv_default_start_angle">-90</integer>
+    <integer name="google_play_services_version">8487000</integer>
+    <integer name="status_bar_notification_info_maxnum">999</integer>
+</resources>

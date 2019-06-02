@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="我的拖车管理" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <TextView android:textSize="16sp" android:textColor="@color/color_ffffff" android:layout_gravity="right" android:id="@+id/tcb_sure_txt" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16dp" android:text="确定"/>
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/swip_refresh" android:layout_width="match_parent" android:layout_height="match_parent">
+            <com.framework.app.component.widget.XListView android:id="@+id/request_list" android:layout_width="match_parent" android:layout_height="match_parent" android:listSelector="@android:color/transparent" android:divider="@null" android:dividerHeight="12dp"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <com.framework.app.component.widget.XListEmptyView android:id="@+id/xlist_empty_view" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        <com.framework.app.component.widget.DataLoadingView android:id="@+id/data_loadingview" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </RelativeLayout>
+</LinearLayout>

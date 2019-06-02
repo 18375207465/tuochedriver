@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tuochebang.service.view.PullToZoomScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/tcb_main_root_scroll" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:background="@color/activity_bg_color" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="40dp">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@+id/rl_header_view" android:background="@color/activity_bg_default" android:layout_width="match_parent" android:layout_height="230dp"/>
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginRight="12dp" android:layout_alignParentRight="true">
+                <ImageView android:id="@+id/img_news" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_white_news"/>
+                <ImageView android:id="@+id/img_setting" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_white_intercalate"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/ll_user_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp" android:layout_centerVertical="true">
+                <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/tcb_profile_img" android:layout_width="80dp" android:layout_height="80dp" android:src="@mipmap/icon_bigportrait"/>
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp">
+                    <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/color_ffffff" android:id="@+id/tcb_user_name_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="---"/>
+                        <TextView android:textSize="@dimen/txt_size_12sp" android:textColor="@color/common_red_color" android:id="@+id/tcb_user_auth_txt" android:background="#fbcc2f" android:padding="1dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:text="认证"/>
+                    </LinearLayout>
+                    <TextView android:textSize="@dimen/txt_size_14sp" android:textColor="@color/color_ffffff" android:id="@+id/tcb_user_company_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="------"/>
+                </LinearLayout>
+            </LinearLayout>
+            <RelativeLayout android:gravity="center_vertical" android:background="@color/activity_bg_default" android:layout_width="match_parent" android:layout_height="32dp" android:layout_alignParentBottom="true">
+                <TextView android:textColor="@color/color_ffffff" android:gravity="center" android:id="@+id/tcb_user_address_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:text="----------" android:drawableLeft="@mipmap/icon_position_white" android:drawablePadding="8dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="120dp">
+            <RelativeLayout android:gravity="center" android:id="@+id/tcb_pull_return_rl" android:background="@color/color_ffffff" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                <TextView android:textSize="20sp" android:textColor="@color/txt_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="发布返程车" android:drawableTop="@mipmap/icon_bigrequest" android:drawablePadding="10dp"/>
+            </RelativeLayout>
+            <View android:background="@color/common_line_color" android:layout_width="1dp" android:layout_height="match_parent"/>
+            <RelativeLayout android:gravity="center" android:id="@+id/tcb_wating_pull_request_rl" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                <TextView android:textSize="20sp" android:textColor="@color/txt_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="待抢拖车请求" android:drawableTop="@mipmap/icon_bigreturn" android:drawablePadding="10dp" android:layout_centerHorizontal="true" android:layout_centerVertical="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
+            <RelativeLayout android:gravity="center_vertical" android:id="@+id/tcb_user_request_rl" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="48dp">
+                <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="我的拖车请求" android:drawableLeft="@mipmap/icon_request" android:drawablePadding="8dp"/>
+            </RelativeLayout>
+            <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+            <RelativeLayout android:gravity="center_vertical" android:id="@+id/tcb_returns_car_rl" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="48dp">
+                <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="我的返程车" android:drawableLeft="@mipmap/icon_return" android:drawablePadding="8dp"/>
+            </RelativeLayout>
+            <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+            <LinearLayout android:orientation="vertical" android:id="@+id/ll_driver_view" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20dp">
+                <RelativeLayout android:gravity="center_vertical" android:id="@+id/tcb_message_rl" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="48dp">
+                    <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="我的消息" android:drawableLeft="@mipmap/icon_news" android:drawablePadding="8dp"/>
+                </RelativeLayout>
+                <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+                <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="12dp"/>
+                <RelativeLayout android:gravity="center_vertical" android:id="@+id/tcb_setting_rl" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="48dp">
+                    <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="设置" android:drawableLeft="@mipmap/icon_intercalate" android:drawablePadding="8dp"/>
+                </RelativeLayout>
+                <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/ll_admin_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20dp">
+                <RelativeLayout android:gravity="center_vertical" android:id="@+id/tcb_authorize_rl" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="48dp">
+                    <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="授权" android:drawableLeft="@mipmap/icon_authorize" android:drawablePadding="8dp"/>
+                </RelativeLayout>
+                <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+                <RelativeLayout android:gravity="center_vertical" android:id="@+id/tcb_manage_rl" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="48dp">
+                    <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="司机管理" android:drawableLeft="@mipmap/icon_manage" android:drawablePadding="8dp"/>
+                </RelativeLayout>
+                <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp"/>
+                <RelativeLayout android:gravity="center_vertical" android:id="@+id/tcb_recharge_rl" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="48dp">
+                    <TextView android:textSize="18sp" android:textColor="@color/txt_title_color" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:text="充值" android:drawableLeft="@mipmap/icon_recharge" android:drawablePadding="8dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.tuochebang.service.view.PullToZoomScrollView>

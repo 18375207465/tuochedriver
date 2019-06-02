@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/activity_bg_color" android:paddingLeft="8dp" android:paddingRight="8dp" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="15dp">
+            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_info_color" android:layout_width="80dp" android:layout_height="wrap_content" android:text="申请日期:"/>
+            <TextView android:textSize="@dimen/txt_size_16sp" android:id="@+id/txt_apply_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2017年02月17日 15:00:00"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="10dp">
+            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_info_color" android:layout_width="80dp" android:layout_height="wrap_content" android:text="司机姓名:"/>
+            <TextView android:textSize="@dimen/txt_size_16sp" android:id="@+id/txt_driver_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="胡八一 "/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="10dp">
+            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_info_color" android:layout_width="80dp" android:layout_height="wrap_content" android:text="司机电话:"/>
+            <TextView android:textSize="@dimen/txt_size_16sp" android:id="@+id/txt_driver_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="18585886742"/>
+        </LinearLayout>
+        <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="15dp"/>
+    </LinearLayout>
+    <RelativeLayout android:gravity="center_vertical" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="40dp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent">
+            <TextView android:id="@+id/txt_desc_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="请求注册授权"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12dp" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/txt_size_14sp" android:textColor="@color/color_ffffff" android:id="@+id/txt_btn_auth" android:background="@drawable/bg_common_red_btn" android:paddingLeft="12dp" android:paddingTop="7dp" android:paddingRight="12dp" android:paddingBottom="7dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="授权"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

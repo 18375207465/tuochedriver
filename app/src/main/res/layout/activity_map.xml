@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="输入起点" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <TextView android:textSize="16sp" android:textColor="@color/color_ffffff" android:layout_gravity="right" android:id="@+id/tcb_sure_txt" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16dp" android:text="确定"/>
+    </android.support.v7.widget.Toolbar>
+    <TextView android:textSize="14sp" android:textColor="@color/txt_info_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/input_text" android:background="@color/color_ffffff" android:paddingLeft="20dp" android:paddingRight="12dp" android:layout_width="match_parent" android:layout_height="48dp" android:text="输入地址, 智能提示" android:singleLine="true" android:inputType="textAutoComplete"/>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <com.amap.api.maps2d.MapView android:id="@+id/map" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        <ImageView android:layout_gravity="center" android:id="@+id/img_location" android:layout_width="30dp" android:layout_height="30dp" android:src="@mipmap/location"/>
+    </FrameLayout>
+</LinearLayout>

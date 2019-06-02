@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:padding="5dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <ImageView android:id="@+id/id_dir_item_image" android:background="@drawable/pic_dir" android:paddingLeft="12dp" android:paddingTop="9dp" android:paddingRight="12dp" android:paddingBottom="17dp" android:layout_width="100dp" android:layout_height="100dp" android:src="@drawable/pic_default" android:scaleType="fitXY" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:contentDescription="@string/app_name"/>
+    <ImageView android:id="@+id/iv_select_indicator" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="13dp" android:src="@drawable/dir_choose" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/app_name"/>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="13dp" android:layout_marginRight="13dp" android:layout_toLeftOf="@+id/iv_select_indicator" android:layout_toRightOf="@+id/id_dir_item_image" android:layout_centerVertical="true">
+        <TextView android:textSize="16sp" android:textColor="#383838" android:id="@+id/id_dir_item_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="所有图片" android:singleLine="true"/>
+        <TextView android:textSize="12sp" android:textColor="#aeaeae" android:id="@+id/id_dir_item_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="4723张" android:singleLine="true"/>
+    </LinearLayout>
+</RelativeLayout>
