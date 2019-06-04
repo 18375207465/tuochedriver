@@ -2,6 +2,7 @@ package com.tuochebang.service.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
 import com.alibaba.sdk.android.oss.OSS;
@@ -24,7 +25,7 @@ import com.yanzhenjie.nohttp.NoHttp;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
     private static final String TAG = MyApplication.class.getSimpleName();
     private static MyApplication mInstance;
     private String OSSaccessKeyId = "9jxXe7WbOWVT4AP8";

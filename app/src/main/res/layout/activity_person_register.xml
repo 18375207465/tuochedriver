@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:navigationIcon="@mipmap/icon_back_white"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:title="个体户注册"
+            app:titleTextColor="@color/color_ffffff">
+
+            <TextView
+                android:id="@+id/tcb_save_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="16dp"
+                android:text="提交"
+                android:textColor="@color/color_ffffff"
+                android:textSize="16sp" />
+        </android.support.v7.widget.Toolbar>
+
+        <RelativeLayout
+            android:id="@+id/tcb_width_rl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/color_ffffff"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/tcb_request_width_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:text="账户"
+                android:textColor="@color/txt_title_color"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/tcb_account_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tcb_request_width_txt"
+                android:background="@null"
+                android:gravity="right|center_vertical|center_horizontal|center"
+                android:hint="请输入"
+                android:inputType="number"
+                android:minWidth="60dp"
+                android:textColor="@color/txt_title_color"
+                android:textColorHint="@color/txt_info_color"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/common_line_color" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/color_ffffff"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/tcb_pwd_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:text="密码"
+                android:textColor="@color/txt_title_color"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/tcb_pwd_ed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tcb_pwd_txt"
+                android:background="@null"
+                android:gravity="right|center_vertical|center_horizontal|center"
+                android:hint="请输入"
+                android:inputType="textPassword"
+                android:minWidth="60dp"
+                android:textColor="@color/txt_title_color"
+                android:textColorHint="@color/txt_info_color"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/common_line_color" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/color_ffffff"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/tcb_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:text="姓名"
+                android:textColor="@color/txt_title_color"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/tcb_name_ed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tcb_name_txt"
+                android:background="@null"
+                android:gravity="right|center_vertical|center_horizontal|center"
+                android:hint="请输入"
+                android:minWidth="60dp"
+                android:textColor="@color/txt_title_color"
+                android:textColorHint="@color/txt_info_color"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/common_line_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:text="上传驾驶证" />
+
+        <ImageView
+            android:id="@+id/img_car_photo"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/basemap" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:text="上传保险" />
+
+        <ImageView
+            android:id="@+id/img_car_insurance"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/basemap" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:text="上传行驶证" />
+
+        <ImageView
+            android:id="@+id/img_car_cross"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/basemap" />
+    </LinearLayout>
+</ScrollView>

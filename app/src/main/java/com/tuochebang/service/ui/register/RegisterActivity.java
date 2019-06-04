@@ -11,8 +11,10 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.framework.app.component.adapter.CommonPagerAdapter;
+import com.framework.app.component.utils.ActivityUtil;
 import com.framework.app.component.view.CommonTabLayout;
 import com.framework.app.component.view.listener.CustomTabEntity;
 import com.framework.app.component.view.listener.OnTabSelectListener;
@@ -22,6 +24,8 @@ import com.tuochebang.service.constant.AppConstant.BroadCastAction;
 import com.tuochebang.service.entity.TabEntity;
 import com.tuochebang.service.ui.register.admin.AdminRegisterItem;
 import com.tuochebang.service.ui.register.driver.DriverRegisterItem;
+import com.tuochebang.service.ui.register.person.PersonRegisterActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +33,7 @@ public class RegisterActivity extends BaseActivity {
     private AdminRegisterItem admin;
     private CommonPagerAdapter commonPagerAdapter;
     DriverRegisterItem driver;
+    private Button mBtnPersonRegister;
     private BroadcastReceiver mRegisterStatuChangeReceiver;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList();
     private CommonTabLayout mTabLayout;
@@ -37,8 +42,8 @@ public class RegisterActivity extends BaseActivity {
     private ViewPager mViewPager;
 
     /* renamed from: com.tuochebang.service.ui.register.RegisterActivity$1 */
-    class C06801 extends BroadcastReceiver {
-        C06801() {
+    class C14781 extends BroadcastReceiver {
+        C14781() {
         }
 
         public void onReceive(Context context, Intent intent) {
@@ -51,8 +56,8 @@ public class RegisterActivity extends BaseActivity {
     }
 
     /* renamed from: com.tuochebang.service.ui.register.RegisterActivity$2 */
-    class C06812 implements OnClickListener {
-        C06812() {
+    class C14792 implements OnClickListener {
+        C14792() {
         }
 
         public void onClick(View v) {
@@ -61,8 +66,18 @@ public class RegisterActivity extends BaseActivity {
     }
 
     /* renamed from: com.tuochebang.service.ui.register.RegisterActivity$3 */
-    class C06823 implements OnTabSelectListener {
-        C06823() {
+    class C14803 implements OnClickListener {
+        C14803() {
+        }
+
+        public void onClick(View v) {
+            ActivityUtil.next(RegisterActivity.this, PersonRegisterActivity.class);
+        }
+    }
+
+    /* renamed from: com.tuochebang.service.ui.register.RegisterActivity$4 */
+    class C14814 implements OnTabSelectListener {
+        C14814() {
         }
 
         public void onTabSelect(int position) {
@@ -73,9 +88,9 @@ public class RegisterActivity extends BaseActivity {
         }
     }
 
-    /* renamed from: com.tuochebang.service.ui.register.RegisterActivity$4 */
-    class C06834 implements OnPageChangeListener {
-        C06834() {
+    /* renamed from: com.tuochebang.service.ui.register.RegisterActivity$5 */
+    class C14825 implements OnPageChangeListener {
+        C14825() {
         }
 
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -98,23 +113,26 @@ public class RegisterActivity extends BaseActivity {
     }
 
     private void registUserStatuChangeBroadCastReciver() {
-        this.mRegisterStatuChangeReceiver = new C06801();
+        this.mRegisterStatuChangeReceiver = new C14781();
         LocalBroadcastManager.getInstance(this).registerReceiver(this.mRegisterStatuChangeReceiver, new IntentFilter(BroadCastAction.USER_REGISTER_SUCCESS));
     }
 
     private void initToolBar() {
         this.mToolBar = (Toolbar) findViewById(R.id.toolbar);
-        this.mToolBar.setNavigationOnClickListener(new C06812());
+        this.mToolBar.setNavigationOnClickListener(new C14792());
     }
 
     private void initView() {
+        this.mBtnPersonRegister = (Button) findViewById(R.id.person_register);
+        this.mBtnPersonRegister.setVisibility(View.VISIBLE);
+        this.mBtnPersonRegister.setOnClickListener(new C14803());
         for (String tabEntity : this.mTitles) {
             this.mTabEntities.add(new TabEntity(tabEntity));
         }
         this.mTabLayout = (CommonTabLayout) findViewById(R.id.tl_1);
         this.mViewPager = (ViewPager) findViewById(R.id.view_pager);
         this.mTabLayout.setTabData(this.mTabEntities);
-        this.mTabLayout.setOnTabSelectListener(new C06823());
+        this.mTabLayout.setOnTabSelectListener(new C14814());
         List<View> listView = new ArrayList();
         this.admin = new AdminRegisterItem(this.mContext);
         this.driver = new DriverRegisterItem(this.mContext);
@@ -123,7 +141,7 @@ public class RegisterActivity extends BaseActivity {
         this.commonPagerAdapter = new CommonPagerAdapter();
         this.commonPagerAdapter.setViewList(listView);
         this.mViewPager.setAdapter(this.commonPagerAdapter);
-        this.mViewPager.setOnPageChangeListener(new C06834());
+        this.mViewPager.setOnPageChangeListener(new C14825());
     }
 
     protected void onDestroy() {

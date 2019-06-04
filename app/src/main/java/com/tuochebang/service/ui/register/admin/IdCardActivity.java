@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+
 import com.alibaba.sdk.android.oss.ClientException;
 import com.alibaba.sdk.android.oss.ServiceException;
 import com.alibaba.sdk.android.oss.callback.OSSCompletedCallback;
@@ -31,7 +32,9 @@ import com.tuochebang.service.constant.AppConstant.BroadCastAction;
 import com.tuochebang.service.request.base.ServerUrl;
 import com.tuochebang.service.request.entity.AdminInfo;
 import com.tuochebang.service.ui.SelectPhotoActivity;
+import com.tuochebang.service.util.NAImageUtils;
 import com.tuochebang.service.widget.wxphotoselector.WxPhotoSelectorActivity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -186,6 +189,7 @@ public class IdCardActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
+            if (data == null) return;
             ArrayList<String> images = data.getStringArrayListExtra(WxPhotoSelectorActivity.EXTRA_RETURN_IMAGES);
             if (images != null && images.size() > 0) {
                 showCommonProgreessDialog("请稍后...");
@@ -198,14 +202,15 @@ public class IdCardActivity extends BaseActivity {
     }
 
     private void uploadImage(final String filePath) {
-        PutObjectRequest put = new PutObjectRequest(AppConstant.ALIYUN_OSS_BUCKET, AppConstant.ALIYUN_OSS_KEY + filePath, filePath);
+        final String path = NAImageUtils.compressAndRotateImage(MyApplication.getInstance(), filePath);
+        PutObjectRequest put = new PutObjectRequest(AppConstant.ALIYUN_OSS_BUCKET, AppConstant.ALIYUN_OSS_KEY + path, path);
         put.setProgressCallback(new C07077());
         OSSAsyncTask task = MyApplication.getInstance().getOssClient().asyncPutObject(put, new OSSCompletedCallback<PutObjectRequest, PutObjectResult>() {
             public void onSuccess(PutObjectRequest request, PutObjectResult result) {
-                IdCardActivity.this.uploadUrls.put(IdCardActivity.this.CURRENT_IMG, ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + filePath);
+                IdCardActivity.this.uploadUrls.put(IdCardActivity.this.CURRENT_IMG, ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + path);
                 Message msg = IdCardActivity.this.handler.obtainMessage();
                 Bundle bundle = new Bundle();
-                bundle.putString("url", ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + filePath);
+                bundle.putString("url", ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + path);
                 msg.setData(bundle);
                 IdCardActivity.this.handler.sendMessage(msg);
             }

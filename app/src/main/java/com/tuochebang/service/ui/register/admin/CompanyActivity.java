@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.alibaba.sdk.android.oss.ClientException;
 import com.alibaba.sdk.android.oss.ServiceException;
 import com.alibaba.sdk.android.oss.callback.OSSCompletedCallback;
@@ -36,6 +37,7 @@ import com.tuochebang.service.ui.CommonEditActivity;
 import com.tuochebang.service.ui.LocationMapActivity;
 import com.tuochebang.service.ui.SelectPhotoActivity;
 import com.tuochebang.service.ui.register.RegisterSuccessActivity;
+import com.tuochebang.service.util.NAImageUtils;
 import com.tuochebang.service.widget.wxphotoselector.WxPhotoSelectorActivity;
 import com.yanzhenjie.nohttp.NoHttp;
 import com.yanzhenjie.nohttp.RequestMethod;
@@ -65,7 +67,7 @@ public class CompanyActivity extends BaseActivity {
 
         public void handleMessage(Message msg) {
             ImageLoader.getInstance().displayImage(msg.getData().getString("url"), CompanyActivity.this.mImgZhizhao);
-            CompanyActivity.this.dismissCommonProgressDialog();
+            dismissCommonProgressDialog();
         }
     }
 
@@ -139,6 +141,7 @@ public class CompanyActivity extends BaseActivity {
         }
 
         public void onSucceed(int what, Response<LoginInfo> response) {
+            if (response.get() == null) return;
             ToastUtil.showMessage(MyApplication.getInstance(), "注册成功");
             BroadCastUtil.sendBroadCast(CompanyActivity.this.mContext, BroadCastAction.USER_REGISTER_SUCCESS);
             ActivityUtil.next(CompanyActivity.this, RegisterSuccessActivity.class);
@@ -150,11 +153,11 @@ public class CompanyActivity extends BaseActivity {
         }
 
         public void onStart(int what) {
-            CompanyActivity.this.showCommonProgreessDialog("請稍後...");
+            showCommonProgreessDialog("請稍後...");
         }
 
         public void onFinish(int what) {
-            CompanyActivity.this.dismissCommonProgressDialog();
+            dismissCommonProgressDialog();
         }
     }
 
@@ -278,16 +281,17 @@ public class CompanyActivity extends BaseActivity {
     }
 
     private void uploadImage(final String filePath) {
-        PutObjectRequest put = new PutObjectRequest(AppConstant.ALIYUN_OSS_BUCKET, AppConstant.ALIYUN_OSS_KEY + filePath, filePath);
+        final String path = NAImageUtils.compressAndRotateImage(MyApplication.getInstance(), filePath);
+        PutObjectRequest put = new PutObjectRequest(AppConstant.ALIYUN_OSS_BUCKET, AppConstant.ALIYUN_OSS_KEY + path, path);
         put.setProgressCallback(new C07009());
         OSSAsyncTask task = MyApplication.getInstance().getOssClient().asyncPutObject(put, new OSSCompletedCallback<PutObjectRequest, PutObjectResult>() {
             public void onSuccess(PutObjectRequest request, PutObjectResult result) {
-                CompanyActivity.this.mAdminInfo.setBusinessLicense(ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + filePath);
+                CompanyActivity.this.mAdminInfo.setBusinessLicense(ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + path);
                 Message msg = CompanyActivity.this.handler.obtainMessage();
                 Bundle bundle = new Bundle();
-                bundle.putString("url", ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + filePath);
+                bundle.putString("url", ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + path);
                 msg.setData(bundle);
-                CompanyActivity.this.handler.sendMessage(msg);
+                handler.sendMessage(msg);
             }
 
             public void onFailure(PutObjectRequest request, ClientException clientExcepion, ServiceException serviceException) {

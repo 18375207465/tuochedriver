@@ -178,5 +178,6 @@
     <string name="go_to_settings">去设置</string>
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
-    <string name="failed_in_requiring_permission">请在「设置-应用-OUI-权限」中为拖车帮授权，以正常使用功能</string>
+    <string name="failed_in_requiring_permission">请在「设置-应用-权限」中为拖车帮授权，以正常使用功能</string>
+    <string name="file_over_size">文件大小不能超过10M</string>
 </resources>

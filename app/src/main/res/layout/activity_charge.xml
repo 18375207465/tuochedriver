@@ -1,28 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="充值" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    <RelativeLayout android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="48dp">
-        <TextView android:textSize="16sp" android:textColor="@color/txt_title_color" android:id="@+id/txt_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:text="金额" android:layout_centerVertical="true"/>
-        <EditText android:textColorHint="@color/txt_info_color" android:id="@+id/et_charge" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="12dp" android:layout_marginRight="10dp" android:hint="请输入充值金额" android:layout_toRightOf="@+id/txt_desc" android:inputType="number"/>
-        <Button android:id="@+id/bt_charge_clear" android:background="@mipmap/icon_fork" android:visibility="gone" android:layout_width="23dp" android:layout_height="23dp" android:layout_marginRight="10dp" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:navigationIcon="@mipmap/icon_back_white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="充值"
+        app:titleTextColor="@color/color_ffffff" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/color_ffffff">
+
+        <TextView
+            android:id="@+id/txt_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:text="金额"
+            android:textColor="@color/txt_title_color"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_charge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/txt_desc"
+            android:background="@color/color_ffffff"
+            android:hint="请输入充值金额"
+            android:inputType="number"
+            android:textColorHint="@color/txt_info_color" />
+
+        <Button
+            android:id="@+id/bt_charge_clear"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/icon_fork"
+            android:visibility="gone" />
     </RelativeLayout>
-    <tuochebang.appcomponent.view.NestRadioGroup android:orientation="vertical" android:id="@+id/nest_radio_group" android:background="@color/color_ffffff" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
-        <LinearLayout android:orientation="vertical" android:id="@+id/ll_wx_zone" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="12dp"/>
-            <RelativeLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="match_parent" android:layout_height="48dp" android:minHeight="48dp">
-                <ImageView android:id="@+id/iv_weichat_icon" android:layout_width="36dp" android:layout_height="36dp" android:layout_marginRight="10dp" android:src="@mipmap/icon_weixin" android:layout_alignParentLeft="true" android:layout_centerVertical="true"/>
-                <RadioButton android:textSize="16sp" android:textColor="@color/txt_title_color" android:id="@+id/rb_wechat" android:layout_width="match_parent" android:layout_height="wrap_content" android:checked="true" android:button="@null" android:text="微信支付" android:drawableRight="@drawable/bg_checkbox_collect" android:layout_toRightOf="@+id/iv_weichat_icon" android:layout_centerVertical="true"/>
+
+    <com.framework.app.component.optimize.NestRadioGroup
+        android:id="@+id/nest_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/color_ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_wx_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="12dp"
+                android:background="@color/common_line_color" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:minHeight="48dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_weichat_icon"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/icon_weixin" />
+
+                <RadioButton
+                    android:id="@+id/rb_wechat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_weichat_icon"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableRight="@drawable/bg_checkbox_collect"
+                    android:text="微信支付"
+                    android:textColor="@color/txt_title_color"
+                    android:textSize="16sp" />
             </RelativeLayout>
         </LinearLayout>
-        <LinearLayout android:orientation="vertical" android:id="@+id/ll_alipay_zone" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="12dp"/>
-            <RelativeLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="match_parent" android:layout_height="48dp" android:minHeight="48dp">
-                <ImageView android:id="@+id/iv_alipay_icon" android:layout_width="36dp" android:layout_height="36dp" android:layout_marginRight="10dp" android:src="@mipmap/icon_zfb" android:layout_alignParentLeft="true" android:layout_centerVertical="true"/>
-                <RadioButton android:textSize="16sp" android:textColor="@color/txt_title_color" android:id="@+id/rb_alipay" android:layout_width="match_parent" android:layout_height="wrap_content" android:button="@null" android:text="支付宝支付" android:drawableRight="@drawable/bg_checkbox_collect" android:layout_toRightOf="@+id/iv_alipay_icon" android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:id="@+id/ll_alipay_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="12dp"
+                android:background="@color/common_line_color" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:minHeight="48dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_alipay_icon"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/icon_zfb" />
+
+                <RadioButton
+                    android:id="@+id/rb_alipay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_alipay_icon"
+                    android:button="@null"
+                    android:drawableRight="@drawable/bg_checkbox_collect"
+                    android:text="支付宝支付"
+                    android:textColor="@color/txt_title_color"
+                    android:textSize="16sp" />
             </RelativeLayout>
         </LinearLayout>
-    </tuochebang.appcomponent.view.NestRadioGroup>
-    <Button android:enabled="false" android:gravity="center" android:id="@+id/charge" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginLeft="30dp" android:layout_marginTop="30dp" android:layout_marginRight="30dp" android:text="确定" style="@style/LoginRedBtn"/>
-    <TextView android:textSize="16sp" android:textColor="@color/txt_info_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:layout_marginTop="30dp" android:layout_marginRight="30dp" android:text="充值说明: 平台充值，用于支付平台费用，所有隶属于您公司的员工共享。"/>
-    <TextView android:textSize="16sp" android:textColor="@color/txt_info_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:layout_marginTop="12dp" android:layout_marginRight="30dp" android:text="每完成一笔订单，平台需要收取一定比例的手续费，可以从这个费用中扣取"/>
+    </com.framework.app.component.optimize.NestRadioGroup>
+
+    <Button
+        android:id="@+id/charge"
+        style="@style/LoginRedBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="确定" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:text="充值说明: 平台充值，用于支付平台费用，所有隶属于您公司的员工共享。"
+        android:textColor="@color/txt_info_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="30dp"
+        android:text="每完成一笔订单，平台需要收取一定比例的手续费，可以从这个费用中扣取"
+        android:textColor="@color/txt_info_color"
+        android:textSize="16sp" />
 </LinearLayout>

@@ -1,20 +1,23 @@
 package com.tuochebang.service.request.base;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 import com.framework.app.component.utils.BroadCastUtil;
+import com.framework.app.component.utils.ToastUtil;
 import com.tuochebang.service.app.MyApplication;
 import com.tuochebang.service.constant.AppConstant.BroadCastAction;
 import com.yanzhenjie.nohttp.Headers;
 import com.yanzhenjie.nohttp.RequestMethod;
+import com.yanzhenjie.nohttp.rest.Request;
 import com.yanzhenjie.nohttp.rest.RestRequest;
 import com.yanzhenjie.nohttp.rest.StringRequest;
 
 import org.json.JSONObject;
 
-public abstract class BaseRequest<T> extends RestRequest<T> {
+public abstract class BaseRequest<T> extends Request<T> {
     private static final int CODE_SUCCEED = 0;
     private static final String KEY_CODE = "code";
     private static final String KEY_DATA = "data";
@@ -63,9 +66,6 @@ public abstract class BaseRequest<T> extends RestRequest<T> {
             return parseObject(jsonData);
         } else if (code == 999) {
             BroadCastUtil.sendBroadCast(MyApplication.getInstance(), BroadCastAction.VALIDATA_TOKE);
-            return null;
-        } else if (code == -2) {
-            BroadCastUtil.sendBroadCast(MyApplication.getInstance(), BroadCastAction.TOKE_EXPIRE);
             return null;
         } else {
             Bundle bundle = new Bundle();

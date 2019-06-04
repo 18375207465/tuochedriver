@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ececec">
+
+    <RelativeLayout
+        android:id="@+id/xlistview_footer_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center">
+
+        <FrameLayout
+            android:id="@+id/icon_anim_zone"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/xlistview_footer_arrow"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:clickable="false"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/icon_logo"
+                android:visibility="gone" />
+
+            <com.framework.app.component.widget.circleprogress.CircularProgressView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/xlistview_footer_progressbar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                app:cpv_animAutostart="false"
+                app:cpv_color="@color/common_puple"
+                app:cpv_indeterminate="true"
+                app:cpv_thickness="4dp" />
+
+            <!--
+            <ProgressBar
+                android:id="@+id/xlistview_header_progressbar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="-40dp"
+                android:clickable="false"
+                android:indeterminateDrawable="@drawable/xlistview_loading_anim"
+                android:visibility="invisible" />
+            -->
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/icon_anim_zone"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/xlistview_header_hint_title"
+                android:textColor="@color/xlistview_title_color"
+                android:textSize="@dimen/xlistview_title_size" />
+
+            <TextView
+                android:id="@+id/xlistview_footer_hint_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/xlistview_footer_hint_normal"
+                android:textColor="@color/xlistview_refres_time_color"
+                android:textSize="@dimen/xlistview_refresh_time_size" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

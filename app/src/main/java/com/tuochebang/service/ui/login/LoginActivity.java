@@ -1,5 +1,7 @@
 package com.tuochebang.service.ui.login;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import com.framework.app.component.utils.ActivityUtil;
 import com.framework.app.component.utils.BroadCastUtil;
 import com.framework.app.component.utils.ToastUtil;
+import com.tuochebang.service.PermissionHelper;
 import com.tuochebang.service.R;
 import com.tuochebang.service.app.MyApplication;
 import com.tuochebang.service.base.BaseActivity;
@@ -177,6 +180,25 @@ public class LoginActivity extends BaseActivity {
         initView();
         initListener();
         changeScrollView();
+        PermissionHelper.getInstance().buildRequest(this)
+                .addRequestPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+                .addRequestPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+                .addRequestPermission(Manifest.permission.LOCATION_HARDWARE)
+                .setDeniedAlertType(PermissionHelper.DeniedAlertType.Toast)
+                .setAction(new PermissionHelper.PermissionsResultAction() {
+                    @SuppressLint("MissingPermission")
+                    @Override
+                    public void onGranted() {
+
+                    }
+
+                    @Override
+                    public void onDenied(String permission) {
+                        super.onDenied(permission);
+                    }
+                })
+                .requst();
+
     }
 
     private void initView() {

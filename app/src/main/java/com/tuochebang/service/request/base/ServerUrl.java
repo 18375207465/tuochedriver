@@ -6,7 +6,7 @@ public class ServerUrl {
     private static final String REQUEST = "request";
     private static final String RETURNS = "returns";
     private static final String SETTING = "setting";
-    private static String URL_PATH = "/tuochebang/rest/business/v1.0/";
+    private static String URL_PATH = "/tuochebang/rest/business/v1.3.0/";
     private static String URL_RELASE = "http://api.tuocb.com";
     private static String URL_TEST = "http://115.28.244.177:8188";
     public static String URL_UPLOAD = "http://tuochebang.oss-cn-qingdao.aliyuncs.com";
@@ -157,5 +157,9 @@ public class ServerUrl {
 
     public String GET_TUOCHE_DETAIL_MESSAGE() {
         return getTcbDomain(MESSAGE) + "queryinfo/token";
+    }
+
+    public String PERSON_REGISTER_URL() {
+        return getTcbDomain("") + "adminuser/userregister";
     }
 }

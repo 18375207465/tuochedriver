@@ -1,0 +1,322 @@
+[
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_album_folder_item.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_album_folder_item.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/layout_tab_top.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/layout_tab_top.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_screen_toolbar.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/notification_template_lines.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/notification_template_lines.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_preview.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_preview.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/notification_template_big_media.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_dialog_title_material.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/dialog_common_notice.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/dialog_common_notice.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/xlistview_header.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/xlistview_header.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/notification_media_action.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_screen_simple.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/select_dialog_multichoice_material.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/item_expand_collapse.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/PowerfulViewLibrary-1.1.6.aar/c9e5e375dac43828c47ddc1c061dced5/res/layout/item_expand_collapse.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/layout_tab_segment.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/layout_tab_segment.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_image_grid_item.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_image_grid_item.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/layout_tab_right.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/layout_tab_right.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_alert_dialog.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_alert_dialog.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/xlistview_footer.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/xlistview_footer.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/ucrop_activity_photobox.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/ucrop/build/intermediates/packaged_res/release/layout/ucrop_activity_photobox.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/notification_template_media.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_title_bar.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_title_bar.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_search_view.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/dialog_common_alert.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/dialog_common_alert.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_select_dialog_material.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/select_dialog_item_material.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/vw_xscrollview_layout.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/vw_xscrollview_layout.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/layout_network_loading.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/layout_network_loading.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/ucrop_layout_rotate_wheel.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/ucrop/build/intermediates/packaged_res/release/layout/ucrop_layout_rotate_wheel.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/layout_tab_left.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/layout_tab_left.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/ucrop_layout_scale_wheel.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/ucrop/build/intermediates/packaged_res/release/layout/ucrop_layout_scale_wheel.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_image_preview.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_image_preview.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_window_folder.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_window_folder.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/notification_media_cancel_action.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/item_ell_bottom.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/PowerfulViewLibrary-1.1.6.aar/c9e5e375dac43828c47ddc1c061dced5/res/layout/item_ell_bottom.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_activity_multi_cutting.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/ucrop/build/intermediates/packaged_res/release/layout/picture_activity_multi_cutting.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_empty.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_empty.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_activity_external_preview.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_activity_external_preview.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/component_xlist_empty_view.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/component_xlist_empty_view.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_item_camera.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_item_camera.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_activity_video_play.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_activity_video_play.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/layout_tab_bottom.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/layout_tab_bottom.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_wind_base_dialog_xml.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_wind_base_dialog_xml.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/layout_tab.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/layout_tab.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/loading_dialog.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/loading_dialog.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/layout_loading_failed.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/layout_loading_failed.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_screen_content_include.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/pull_to_refresh_footer.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/pull_to_refresh_footer.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_gf_adapter_edit_list.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/ucrop/build/intermediates/packaged_res/release/layout/picture_gf_adapter_edit_list.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_action_mode_bar.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/ucrop_view.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/ucrop/build/intermediates/packaged_res/release/layout/ucrop_view.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/pull_to_refresh_header.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/pull_to_refresh_header.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/ucrop_controls.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/ucrop/build/intermediates/packaged_res/release/layout/ucrop_controls.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/notification_template_big_media_narrow.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_camera_pop_layout.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_camera_pop_layout.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/picture_selector.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/picture_library/build/intermediates/packaged_res/release/layout/picture_selector.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/notification_template_part_time.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/ucrop_aspect_ratio.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/ucrop/build/intermediates/packaged_res/release/layout/ucrop_aspect_ratio.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_activity_chooser_view.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/widget_data_loading_view.xml",
+        "source": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/src/main/res/layout/widget_data_loading_view.xml"
+    },
+    {
+        "merged": "/Users/qianqiangongzhu/code/tuochedriver/appcomponent/build/intermediates/res/merged/release/layout/abc_action_menu_layout.xml",
+        "source": "/Users/qianqiangongzhu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.2.1.aar/d46244b6e119585b311f4bfb027b2734/res/layout/abc_action_menu_layout.xml"
+    }
+]

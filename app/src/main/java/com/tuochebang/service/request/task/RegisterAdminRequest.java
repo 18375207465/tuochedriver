@@ -1,9 +1,13 @@
 package com.tuochebang.service.request.task;
 
+import android.text.TextUtils;
+
 import com.tuochebang.service.request.base.BaseRequest;
 import com.tuochebang.service.request.entity.AdminInfo;
 import com.tuochebang.service.request.entity.LoginInfo;
+import com.yanzhenjie.nohttp.Headers;
 import com.yanzhenjie.nohttp.RequestMethod;
+import com.yanzhenjie.nohttp.rest.StringRequest;
 
 import org.json.JSONObject;
 
@@ -24,5 +28,18 @@ public class RegisterAdminRequest extends BaseRequest<LoginInfo> {
             e.printStackTrace();
         }
         setDefineRequestBodyForJson(this.mParams);
+    }
+
+    @Override
+    public LoginInfo parseResponse(Headers responseHeaders, byte[] responseBody) {
+        String result = StringRequest.parseResponseString(responseHeaders, responseBody);
+        if (TextUtils.isEmpty(result)) {
+            return new LoginInfo();
+        }
+        return super.parseResponse(responseHeaders, responseBody);
+    }
+
+    protected LoginInfo parseObject(String jsonData) {
+        return new LoginInfo();
     }
 }

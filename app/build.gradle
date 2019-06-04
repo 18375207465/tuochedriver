@@ -6,8 +6,8 @@ android {
         applicationId "com.tuochebang.service"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 1600
+        versionName "1.6.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
@@ -18,22 +18,40 @@ android {
                 JPUSH_APPKEY : "5b02d3c648bafd038f5d73da", //JPush 上注册的包名对应的 Appkey.
                 JPUSH_CHANNEL: "developer-tuochebang", //暂时填写默认值即可.
         ]
+        multiDexEnabled true
     }
+
+    signingConfigs {
+        release {
+            storeFile file("../tuochedriver.keystore")
+            storePassword "123456"
+            keyAlias "tcd"
+            keyPassword "123456"
+        }
+    }
+
+
     buildTypes {
         release {
-            aaptOptions.cruncherEnabled = false
-            aaptOptions.useNewCruncher = false
+            ndk {
+                abiFilters "armeabi-v7a", "x86"
+            }
             minifyEnabled false
+            multiDexEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
-            aaptOptions.cruncherEnabled = false
-            aaptOptions.useNewCruncher = false
+            multiDexEnabled true
+            signingConfig signingConfigs.release
             minifyEnabled false
         }
     }
     // 移除lint检查的error
+
     lintOptions {
+        disable 'InvalidPackage'
+        disable "ResourceType"
         abortOnError false
     }
 }
@@ -43,6 +61,7 @@ dependencies {
     implementation 'com.yanzhenjie.nohttp:nohttp:1.1.11'
     //implementation 'com.yanzhenjie.nohttp:okhttp:1.0.3'
     compile 'com.amap.api:map2d:5.2.0'
+    compile 'com.android.support:multidex:1.0.1'
     compile 'com.amap.api:navi-3dmap:6.7.0_3dmap6.8.0'
     compile 'com.amap.api:search:6.5.0.1'
     compile 'com.amap.api:location:3.3.0'
@@ -50,7 +69,6 @@ dependencies {
     compile 'com.aliyun.dpa:oss-android-sdk:2.5.0'
     compile 'com.contrarywind:Android-PickerView:4.1.8'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
-    compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
     compile 'cn.jiguang.sdk:jpush:3.3.0'
     compile 'cn.jiguang.sdk:jcore:2.0.1'
     implementation 'com.wdullaer:materialdatetimepicker:2.1.1'

@@ -21,6 +21,7 @@ import android.graphics.Shader.TileMode;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
@@ -28,6 +29,8 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.ViewCompat;
+import android.text.TextUtils;
+
 import com.tuochebang.service.app.MyApplication;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -417,4 +420,5 @@ public class ImageUtil {
         bitmap.compress(CompressFormat.PNG, 100, baos);
         return baos.toByteArray();
     }
+
 }

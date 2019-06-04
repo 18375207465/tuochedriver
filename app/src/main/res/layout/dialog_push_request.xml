@@ -1,45 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/layout_root" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:layout_marginRight="30dp">
-    <LinearLayout android:orientation="vertical" android:background="@color/color_ffffff" android:paddingBottom="12dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25dp">
-        <TextView android:textColor="@color/txt_title_color" android:layout_gravity="center_horizontal" android:id="@+id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:text="奥迪 A6 黑色 自动挡 四驱"/>
-        <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="12dp"/>
-        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="15dp">
-            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_info_color" android:layout_width="80dp" android:layout_height="wrap_content" android:text="起点:"/>
-            <TextView android:textSize="@dimen/txt_size_16sp" android:id="@+id/txt_begin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="武侯区 武侯立交"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/color_ffffff"
+        android:orientation="vertical"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="奥迪 A6 黑色 自动挡 四驱"
+            android:textColor="@color/txt_title_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/common_line_color" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="起点:"
+                android:textColor="@color/txt_info_color"
+                android:textSize="@dimen/txt_size_16sp" />
+
+            <TextView
+                android:id="@+id/txt_begin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="武侯区 武侯立交"
+                android:textSize="@dimen/txt_size_16sp" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="15dp">
-            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_info_color" android:layout_width="80dp" android:layout_height="wrap_content" android:text="终点:"/>
-            <TextView android:textSize="@dimen/txt_size_16sp" android:id="@+id/txt_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="四川省双流县"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="终点:"
+                android:textColor="@color/txt_info_color"
+                android:textSize="@dimen/txt_size_16sp" />
+
+            <TextView
+                android:id="@+id/txt_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="四川省双流县"
+                android:textSize="@dimen/txt_size_16sp" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="15dp">
-            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_info_color" android:layout_width="80dp" android:layout_height="wrap_content" android:text="距离:"/>
-            <TextView android:textSize="@dimen/txt_size_16sp" android:id="@+id/txt_distance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10公里"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="距离:"
+                android:textColor="@color/txt_info_color"
+                android:textSize="@dimen/txt_size_16sp" />
+
+            <TextView
+                android:id="@+id/txt_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10公里"
+                android:textSize="@dimen/txt_size_16sp" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="15dp">
-            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_info_color" android:layout_width="80dp" android:layout_height="wrap_content" android:text="司机姓名:"/>
-            <TextView android:textSize="@dimen/txt_size_16sp" android:id="@+id/txt_driver_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="胡八一"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="司机姓名:"
+                android:textColor="@color/txt_info_color"
+                android:textSize="@dimen/txt_size_16sp" />
+
+            <TextView
+                android:id="@+id/txt_driver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="胡八一"
+                android:textSize="@dimen/txt_size_16sp" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="15dp">
-            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_info_color" android:layout_width="80dp" android:layout_height="wrap_content" android:text="司机电话:"/>
-            <TextView android:textSize="@dimen/txt_size_16sp" android:id="@+id/txt_driver_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="18585886742"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="司机电话:"
+                android:textColor="@color/txt_info_color"
+                android:textSize="@dimen/txt_size_16sp" />
+
+            <TextView
+                android:id="@+id/txt_driver_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18585886742"
+                android:textSize="@dimen/txt_size_16sp" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginTop="15dp">
-            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/txt_info_color" android:layout_width="80dp" android:layout_height="wrap_content" android:text="出发时间:"/>
-            <TextView android:textSize="@dimen/txt_size_16sp" android:id="@+id/txt_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2017年03月12日 18：40：00"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="出发时间:"
+                android:textColor="@color/txt_info_color"
+                android:textSize="@dimen/txt_size_16sp" />
+
+            <TextView
+                android:id="@+id/txt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017年03月12日 18：40：00"
+                android:textSize="@dimen/txt_size_16sp" />
         </LinearLayout>
-        <TextView android:textColor="@color/txt_title_color" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="需要返程车"/>
-        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp">
-            <TextView android:textColor="@color/txt_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="预估价格"/>
-            <TextView android:textColor="@color/common_red_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="¥386.00"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:text="需要返程车"
+            android:textColor="@color/txt_title_color" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预估价格"
+                android:textColor="@color/txt_title_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="¥386.00"
+                android:textColor="@color/common_red_color" />
         </LinearLayout>
-        <View android:background="@color/common_line_color" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="12dp"/>
-        <LinearLayout android:orientation="vertical" android:id="@+id/ll_choice" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp">
-            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
-                <Button android:textColor="@color/txt_title_color" android:id="@+id/btn_cancel" android:background="@null" android:layout_width="match_parent" android:layout_height="21dp" android:text="忽略" android:layout_toLeftOf="@+id/view_divider" android:layout_alignParentLeft="true"/>
-                <View android:id="@+id/view_divider" android:background="@color/common_line_color" android:layout_width="1dp" android:layout_height="20dp" android:layout_centerInParent="true"/>
-                <Button android:textColor="@color/common_red_color" android:id="@+id/btn_ok" android:background="@null" android:layout_width="match_parent" android:layout_height="21dp" android:text="抢单" android:layout_toRightOf="@+id/view_divider" android:layout_alignParentRight="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/common_line_color" />
+
+        <LinearLayout
+            android:id="@+id/ll_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="21dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/view_divider"
+                    android:background="@null"
+                    android:text="忽略"
+                    android:textColor="@color/txt_title_color" />
+
+                <View
+                    android:id="@+id/view_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:background="@color/common_line_color" />
+
+                <Button
+                    android:id="@+id/btn_ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="21dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/view_divider"
+                    android:background="@null"
+                    android:text="抢单"
+                    android:textColor="@color/common_red_color" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:id="@+id/ll_dismiss" android:background="@android:color/transparent" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="50dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_dismiss"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:descendantFocusability="afterDescendants"
+        android:orientation="horizontal" />
 </RelativeLayout>

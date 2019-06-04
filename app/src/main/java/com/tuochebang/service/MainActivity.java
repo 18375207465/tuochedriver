@@ -1,5 +1,7 @@
 package com.tuochebang.service;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -29,6 +31,7 @@ import com.tuochebang.service.request.base.ServerUrl;
 import com.tuochebang.service.request.entity.LoginInfo;
 import com.tuochebang.service.request.entity.UserInfo;
 import com.tuochebang.service.request.task.UserInfoRequest;
+import com.tuochebang.service.ui.SelectPhotoActivity;
 import com.tuochebang.service.ui.login.LoginActivity;
 import com.tuochebang.service.ui.request.UserRequestActivity;
 import com.tuochebang.service.ui.request.WatingRequestActivity;
@@ -52,6 +55,7 @@ import com.yanzhenjie.nohttp.rest.RequestQueue;
 import com.yanzhenjie.nohttp.rest.Response;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
 import java.util.Random;
 
 public class MainActivity extends BaseActivity {
@@ -198,12 +202,13 @@ public class MainActivity extends BaseActivity {
         if (!MyApplication.getInstance().isUserLogin()) {
             ActivityUtil.next(this, LoginActivity.class);
         }
-        textPushDialog();
+        //textPushDialog();
         setCouldDoubleBackExit(true);
         initView();
         initListerner();
         registUserStatuChangeBroadCastReciver();
         initData();
+
     }
 
     private void textPushDialog() {

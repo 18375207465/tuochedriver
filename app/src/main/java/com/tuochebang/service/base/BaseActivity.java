@@ -127,6 +127,7 @@ public class BaseActivity extends AppCompatActivity {
         }
         if (!this.mCommonProgressDialog.isShowing()) {
             this.mCommonProgressDialog.setMessage(hint);
+            mCommonProgressDialog.setCancelable(false);
             this.mCommonProgressDialog.show();
         }
     }
