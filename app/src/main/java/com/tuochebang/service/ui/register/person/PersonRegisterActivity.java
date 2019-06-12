@@ -2,11 +2,14 @@ package com.tuochebang.service.ui.register.person;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.content.FileProvider;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -28,6 +31,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.tuochebang.service.R;
 import com.tuochebang.service.app.MyApplication;
 import com.tuochebang.service.base.BaseActivity;
+import com.tuochebang.service.cache.FileUtil;
 import com.tuochebang.service.constant.AppConstant;
 import com.tuochebang.service.request.base.ServerUrl;
 import com.tuochebang.service.request.task.PersonRegisterRequest;
@@ -35,6 +39,7 @@ import com.tuochebang.service.ui.SelectPhotoActivity;
 import com.tuochebang.service.ui.WebActivity;
 import com.tuochebang.service.util.NAImageUtils;
 import com.tuochebang.service.widget.wxphotoselector.WxPhotoSelectorActivity;
+import com.yalantis.ucrop.util.FileUtils;
 import com.yanzhenjie.nohttp.NoHttp;
 import com.yanzhenjie.nohttp.RequestMethod;
 import com.yanzhenjie.nohttp.rest.OnResponseListener;
@@ -72,6 +77,7 @@ public class PersonRegisterActivity extends BaseActivity {
 
         public void handleMessage(Message msg) {
             String url = msg.getData().getString(WebActivity.FLAG_URL);
+            Log.e("handleMessage", url);
             if (CURRENT_IMG.equals(CORRECT_SIDE_IMG)) {
                 ImageLoader.getInstance().displayImage(url, mImgCorrectSide);
             } else if (CURRENT_IMG.equals(OPPOSITE_SIDE_IMG)) {
@@ -252,6 +258,7 @@ public class PersonRegisterActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
+            if (data == null) return;
             ArrayList<String> images = data.getStringArrayListExtra(WxPhotoSelectorActivity.EXTRA_RETURN_IMAGES);
             if (images != null && images.size() > 0) {
                 showCommonProgreessDialog("请稍后...");
@@ -263,16 +270,19 @@ public class PersonRegisterActivity extends BaseActivity {
         }
     }
 
-    private void uploadImage(final String filePath) {
+    private void uploadImage(String filePath) {
         final String path = NAImageUtils.compressAndRotateImage(MyApplication.getInstance(), filePath);
         PutObjectRequest put = new PutObjectRequest(AppConstant.ALIYUN_OSS_BUCKET, AppConstant.ALIYUN_OSS_KEY + System.currentTimeMillis(), path);
         put.setProgressCallback(new C15259());
         OSSAsyncTask task = MyApplication.getInstance().getOssClient().asyncPutObject(put, new OSSCompletedCallback<PutObjectRequest, PutObjectResult>() {
             public void onSuccess(PutObjectRequest request, PutObjectResult result) {
-                uploadUrls.put(PersonRegisterActivity.this.CURRENT_IMG, ServerUrl.URL_UPLOAD + "/" + request.getObjectKey() + path);
+                String url =
+                        MyApplication.getInstance().getOssClient()
+                                .presignPublicObjectURL(AppConstant.ALIYUN_OSS_BUCKET, request.getObjectKey());
+                uploadUrls.put(CURRENT_IMG, url);
                 Message msg = PersonRegisterActivity.this.handler.obtainMessage();
                 Bundle bundle = new Bundle();
-                bundle.putString("url", ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + path);
+                bundle.putString("url", url);
                 msg.setData(bundle);
                 PersonRegisterActivity.this.handler.sendMessage(msg);
             }

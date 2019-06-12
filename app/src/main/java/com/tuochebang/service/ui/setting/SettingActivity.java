@@ -21,6 +21,7 @@ import com.tuochebang.service.cache.FileUtil;
 import com.tuochebang.service.constant.AppConstant.BroadCastAction;
 import com.tuochebang.service.util.AndroidUtil;
 import com.tuochebang.service.widget.SwitchView.OnStateChangedListener;
+
 import java.text.DecimalFormat;
 
 public class SettingActivity extends BaseActivity {
@@ -135,6 +136,12 @@ public class SettingActivity extends BaseActivity {
         this.mRlClearCache.setOnClickListener(new C07771());
         this.mBtnLogout.setOnClickListener(new C07782());
         this.mRlFeedBack.setOnClickListener(new C07793());
+        findViewById(R.id.tcb_feed_back_txt).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AndroidUtil.callPhone(SettingActivity.this, "4000851300");
+            }
+        });
     }
 
     private void initToolBar() {

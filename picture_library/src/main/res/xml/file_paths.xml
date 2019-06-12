@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <paths>
-        <external-path
-            name="camera_photos"
-            path="" />
-    </paths>
-</resources>
+<paths>
+    <!--该方式提供在外部存储区域根目录下的文件。它对应Environment.getExternalStorageDirectory返回的路径：eg: /storage/emulated/0/${path}-->
+    <external-path
+        name="photo_path"
+        path="/DCIM/Tuochebang/driver" />
+
+
+    <external-cache-path
+        name="download"
+        path="/" />
+
+    <!--解决7.0以上部分三方ROM含有内存卡导致的BUG,FileProvider.711-->
+    <root-path
+        name="sdcrad"
+        path="/" />
+
+    <external-path
+        name="Pictures"
+        path="." />
+</paths>

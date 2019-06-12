@@ -286,10 +286,13 @@ public class CompanyActivity extends BaseActivity {
         put.setProgressCallback(new C07009());
         OSSAsyncTask task = MyApplication.getInstance().getOssClient().asyncPutObject(put, new OSSCompletedCallback<PutObjectRequest, PutObjectResult>() {
             public void onSuccess(PutObjectRequest request, PutObjectResult result) {
-                CompanyActivity.this.mAdminInfo.setBusinessLicense(ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + path);
+                String url =
+                        MyApplication.getInstance().getOssClient()
+                                .presignPublicObjectURL(AppConstant.ALIYUN_OSS_BUCKET, request.getObjectKey());
+                CompanyActivity.this.mAdminInfo.setBusinessLicense(url);
                 Message msg = CompanyActivity.this.handler.obtainMessage();
                 Bundle bundle = new Bundle();
-                bundle.putString("url", ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + path);
+                bundle.putString("url", url);
                 msg.setData(bundle);
                 handler.sendMessage(msg);
             }

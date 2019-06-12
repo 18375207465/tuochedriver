@@ -139,7 +139,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:gravity="right|center_vertical|center_horizontal|center"
-            android:text="400-0000-00"
+            android:text="4000851300"
             android:textColor="@color/txt_info_color" />
     </RelativeLayout>
 

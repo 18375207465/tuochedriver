@@ -10,7 +10,10 @@ import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.provider.MediaStore.Images.Media;
+import android.support.v4.content.FileProvider;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -21,12 +24,16 @@ import com.framework.app.component.utils.ActivityUtil;
 import com.tuochebang.service.PermissionHelper;
 import com.tuochebang.service.R;
 import com.tuochebang.service.adapter.SelectedDataAdapter;
+import com.tuochebang.service.app.MyApplication;
 import com.tuochebang.service.base.BaseActivity;
 import com.tuochebang.service.cache.FileUtil;
 import com.tuochebang.service.util.ImageUtil;
 import com.tuochebang.service.util.PictureUtil;
+import com.tuochebang.service.util.StorageUtils;
 import com.tuochebang.service.widget.wxphotoselector.WxPhotoSelectorActivity;
+import com.yalantis.ucrop.util.FileUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +58,7 @@ public class SelectPhotoActivity extends BaseActivity {
     private static final int REQ_RESULT_PHOTO_CROP = 700;
     private static final int REQ_RESULT_WXPHOTO = 100;
     private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 20;
-    private String IMAGE_DEFAULE_PATH = "/base//image/";
+    private String IMAGE_DEFAULE_PATH = "/base/image/";
     private ArrayList<String> imageList;
     private Uri mCameraImageUri;
     private String mDialogTitle;
@@ -65,6 +72,20 @@ public class SelectPhotoActivity extends BaseActivity {
     private int mPosition;
     private TextView mTvTitle;
 
+    private String mSaveDir;
+
+    private String mPhotoSaveDir;
+
+    private String mEditSaveDir;
+
+    private final String DEFAULT_SAVE_DIR =
+            StorageUtils.isSDCardExist() ? Environment.getExternalStorageDirectory()
+                    + File.separator
+                    + Environment.DIRECTORY_DCIM
+                    + File.separator
+                    + Directory.TUOCHEBANG_DIR_NAME
+                    + File.separator : Environment.getDownloadCacheDirectory().getAbsolutePath();
+
     /* renamed from: com.tuochebang.service.ui.SelectPhotoActivity$1 */
     class C06701 implements OnItemClickListener {
         C06701() {
@@ -74,15 +95,16 @@ public class SelectPhotoActivity extends BaseActivity {
             PermissionHelper.getInstance().buildRequest(SelectPhotoActivity.this)
                     .addRequestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     .addRequestPermission(Manifest.permission.CAMERA)
+                    .addRequestPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     .setDeniedAlertType(PermissionHelper.DeniedAlertType.Toast)
                     .setAction(new PermissionHelper.PermissionsResultAction() {
                         @SuppressLint("MissingPermission")
                         @Override
                         public void onGranted() {
                             SelectPhotoActivity.this.mPosition = position;
-                            if (position == 0) {
-                                SelectPhotoActivity.this.openCamera();
-                            } else if (SelectPhotoActivity.this.mPhotoSelectType == 0) {
+                            if (mPosition == 0) {
+                                openCamera();
+                            } else if (mPosition == 1) {
                                 SelectPhotoActivity.this.openMediaStore();
                             } else {
                                 SelectPhotoActivity.this.openWxPhotoSelect();
@@ -141,9 +163,14 @@ public class SelectPhotoActivity extends BaseActivity {
         try {
             if (Environment.getExternalStorageState().equals("mounted")) {
                 try {
-                    this.mCameraImageUri = Uri.fromFile(FileUtil.createCacheFile(this.IMAGE_DEFAULE_PATH, System.currentTimeMillis() + IMAGE_DEFAULT_NAME));
-                    Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                    intent.putExtra("output", this.mCameraImageUri);
+
+                    mCameraImageUri = FileProvider.getUriForFile(
+                            this,
+                            getPackageName() + ".provider",
+                            FileUtil.createCacheFile(this.IMAGE_DEFAULE_PATH, System.currentTimeMillis() + IMAGE_DEFAULT_NAME));
+                    //mCameraImageUri = Uri.fromFile(FileUtil.createCacheFile(this.IMAGE_DEFAULE_PATH, System.currentTimeMillis() + IMAGE_DEFAULT_NAME));
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, mCameraImageUri);
                     intent.putExtra("return-data", true);
                     startActivityForResult(intent, REQ_RESULT_PHOTO_CAPTURE);
                 } catch (IOException e) {
@@ -154,6 +181,32 @@ public class SelectPhotoActivity extends BaseActivity {
         } catch (Exception e2) {
             showNoticeMsg("没有合适的相机应用程序");
         }
+    }
+
+    public String getPhotoSaveDir() {
+        if (TextUtils.isEmpty(mPhotoSaveDir)) {
+            mPhotoSaveDir = getSaveDir() + Directory.PHOTO_DIR_NAME + File.separator;
+        }
+        return mPhotoSaveDir;
+    }
+
+    public String getSaveDir() {
+        if (TextUtils.isEmpty(mSaveDir)) {
+            mSaveDir = DEFAULT_SAVE_DIR;
+        }
+        return mSaveDir;
+    }
+
+    private interface Directory {
+
+        //保存用拍摄图片的目录名
+        String PHOTO_DIR_NAME = "Tuochebang_driver";
+
+        //保存被编辑图片的目录名
+        String EDIT_DIR_NAME = "Photo_Edit";
+
+        //用保存的所有图片的根目录名
+        String TUOCHEBANG_DIR_NAME = "Tuochebang";
     }
 
     private void openMediaStore() {
@@ -178,9 +231,17 @@ public class SelectPhotoActivity extends BaseActivity {
     }
 
     private void setupCropIntent(Intent intent) {
-        intent.putExtra("crop", "true");
-        intent.putExtra("aspectX", this.mPhotoAspectX);
-        intent.putExtra("aspectY", this.mPhotoAspectY);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+
+        if (android.os.Build.MANUFACTURER.contains("HUAWEI")) {
+            intent.putExtra("aspectX", 9998);
+            intent.putExtra("aspectY", 9999);
+        } else {
+            intent.putExtra("aspectX", this.mPhotoAspectX);
+            intent.putExtra("aspectY", this.mPhotoAspectY);
+        }
+        intent.putExtra("crop", "false");
         intent.putExtra("outputX", this.mPhotoOutputX);
         intent.putExtra("outputY", this.mPhotoOutputY);
         intent.putExtra("scale", true);
@@ -191,7 +252,7 @@ public class SelectPhotoActivity extends BaseActivity {
 
     private void cropImageUriByTakePhoto() {
         Intent intent = new Intent("com.android.camera.action.CROP");
-        intent.setDataAndType(this.mCameraImageUri, "image/*");
+        intent.setDataAndType(mCameraImageUri, "image/*");
         setupCropIntent(intent);
         startActivityForResult(intent, REQ_RESULT_PHOTO_CROP);
     }
@@ -218,7 +279,9 @@ public class SelectPhotoActivity extends BaseActivity {
                     return;
                 case REQ_RESULT_PHOTO_CROP /*700*/:
                     if (this.mCameraImageUri != null) {
-                        String path = this.mCameraImageUri.getPath();
+                        String path = mCameraImageUri.getPath();
+                        path = FileUtil.getFileFromUri(mCameraImageUri, MyApplication.getInstance());
+                        //String path = this.mCameraImageUri.getPath();
                         Intent intent = new Intent();
                         if (this.mPhotoSelectType != 0) {
                             this.imageList.add(path);
@@ -250,4 +313,18 @@ public class SelectPhotoActivity extends BaseActivity {
             }
         }
     }
+
+    private interface Key {
+
+        String UUID = "UUID";
+
+        String SAVE_DIR = "KEY_SAVE_DIR";
+
+        String USER_QUESTION = "USER_QUESTION";
+
+        String IS_FIRST_UPLOAD = "is_first_upload";
+
+        String UPDATE = "update";
+    }
+
 }

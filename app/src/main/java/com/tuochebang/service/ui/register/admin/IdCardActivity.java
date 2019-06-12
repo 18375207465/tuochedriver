@@ -32,6 +32,7 @@ import com.tuochebang.service.constant.AppConstant.BroadCastAction;
 import com.tuochebang.service.request.base.ServerUrl;
 import com.tuochebang.service.request.entity.AdminInfo;
 import com.tuochebang.service.ui.SelectPhotoActivity;
+import com.tuochebang.service.ui.register.person.PersonRegisterActivity;
 import com.tuochebang.service.util.NAImageUtils;
 import com.tuochebang.service.widget.wxphotoselector.WxPhotoSelectorActivity;
 
@@ -203,14 +204,17 @@ public class IdCardActivity extends BaseActivity {
 
     private void uploadImage(final String filePath) {
         final String path = NAImageUtils.compressAndRotateImage(MyApplication.getInstance(), filePath);
-        PutObjectRequest put = new PutObjectRequest(AppConstant.ALIYUN_OSS_BUCKET, AppConstant.ALIYUN_OSS_KEY + path, path);
+        PutObjectRequest put = new PutObjectRequest(AppConstant.ALIYUN_OSS_BUCKET, AppConstant.ALIYUN_OSS_KEY + System.currentTimeMillis(), path);
         put.setProgressCallback(new C07077());
         OSSAsyncTask task = MyApplication.getInstance().getOssClient().asyncPutObject(put, new OSSCompletedCallback<PutObjectRequest, PutObjectResult>() {
             public void onSuccess(PutObjectRequest request, PutObjectResult result) {
-                IdCardActivity.this.uploadUrls.put(IdCardActivity.this.CURRENT_IMG, ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + path);
+                String url =
+                        MyApplication.getInstance().getOssClient()
+                                .presignPublicObjectURL(AppConstant.ALIYUN_OSS_BUCKET, request.getObjectKey());
+                IdCardActivity.this.uploadUrls.put(IdCardActivity.this.CURRENT_IMG, url);
                 Message msg = IdCardActivity.this.handler.obtainMessage();
                 Bundle bundle = new Bundle();
-                bundle.putString("url", ServerUrl.URL_UPLOAD + "/" + AppConstant.ALIYUN_OSS_KEY + path);
+                bundle.putString("url", url);
                 msg.setData(bundle);
                 IdCardActivity.this.handler.sendMessage(msg);
             }
