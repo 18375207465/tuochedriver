@@ -10,12 +10,17 @@ import android.widget.TextView;
 
 import com.framework.app.component.optimize.GridViewForScrollView;
 import com.framework.app.component.utils.ActivityUtil;
+import com.framework.app.component.utils.ToastUtil;
 import com.tuochebang.service.R;
 import com.tuochebang.service.adapter.RequestImageListAdapter;
+import com.tuochebang.service.app.MyApplication;
 import com.tuochebang.service.base.BaseActivity;
 import com.tuochebang.service.request.entity.TuocheRequestInfo;
 import com.tuochebang.service.util.Tools;
 
+/**
+ * 抢单
+ */
 public class WaitingRequestDetailActivity extends BaseActivity {
     private RequestImageListAdapter adapter;
     private Button mBtnRob;
@@ -44,8 +49,22 @@ public class WaitingRequestDetailActivity extends BaseActivity {
         C07392() {
         }
 
+        /**
+         * 抢单事件
+         * @param v
+         */
         public void onClick(View v) {
             ActivityUtil.next(WaitingRequestDetailActivity.this, ApplyTuocheRequestActivity.class);
+
+//            //判断是否为管理员
+//            if (ApplyTuocheRequestActivity.this.mSelectName == null) {
+//                ToastUtil.showMessage(MyApplication.getInstance(), "请选择拖车¬");
+//            } else if (ApplyTuocheRequestActivity.this.mSelectName.getUnfinish() > 0) {
+//                ToastUtil.showMessage(MyApplication.getInstance(), "还有未完成的订单，暂不能接单");
+//            } else {
+//                ApplyTuocheRequestActivity.this.onBtnApply();//提交请求
+//            }
+
             WaitingRequestDetailActivity.this.finish();
         }
     }
@@ -82,7 +101,7 @@ public class WaitingRequestDetailActivity extends BaseActivity {
     }
 
     private void initListener() {
-        this.mBtnRob.setOnClickListener(new C07392());
+        this.mBtnRob.setOnClickListener(new C07392());//抢单事件
     }
 
     private void initView() {

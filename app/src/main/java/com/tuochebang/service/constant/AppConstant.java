@@ -8,7 +8,7 @@ public class AppConstant {
     public static final String ALIYUN_OSS_BUCKET = "tuochebang";
     public static final String ALIYUN_OSS_KEY = "tuoche/";
     public static int APP_DEFAULT_START_COUNT = 2;
-    public static final String APP_PHONE = "400-1000-0000";
+    public static final String APP_PHONE = "400-085-1300";
     public static final String APP_START_COUNT = "app_start_count";
     public static int AppRole_HoneyCircle = 2;
     public static final String CACHE_ROOT_PATH = (Environment.getExternalStorageDirectory().getPath() + File.separator + AppConfig.APP_NAME);

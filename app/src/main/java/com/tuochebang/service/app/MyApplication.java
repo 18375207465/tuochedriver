@@ -2,6 +2,7 @@ package com.tuochebang.service.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.provider.Settings;
 import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
@@ -20,6 +21,7 @@ import com.framework.app.component.utils.LoggerUtil;
 import com.tuochebang.service.cache.FileUtil;
 import com.tuochebang.service.constant.AppConstant;
 import com.tuochebang.service.request.entity.UserInfo;
+import com.umeng.commonsdk.UMConfigure;
 import com.yanzhenjie.nohttp.NoHttp;
 
 import java.sql.Date;
@@ -80,6 +82,15 @@ public class MyApplication extends MultiDexApplication {
         super.onCreate();
         mInstance = this;
         init();
+        //友盟
+        /**
+         * 注意: 即使您已经在AndroidManifest.xml中配置过appkey和channel值，也需要在App代码中调
+         * 用初始化接口（如需要使用AndroidManifest.xml中配置好的appkey和channel值，
+         * UMConfigure.init调用中appkey和channel参数请置为null）。
+         */
+        String ANDROID_ID = Settings.System.getString(getContentResolver(), Settings.System.ANDROID_ID);
+        UMConfigure.init(getBaseContext(), "5aaf2500f29d985de1000054",
+                ANDROID_ID, UMConfigure.DEVICE_TYPE_PHONE, null);
     }
 
     private void init() {

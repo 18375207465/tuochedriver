@@ -34,6 +34,10 @@
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
+    <!-- 安装apk -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+
     <application
         android:name="com.tuochebang.service.app.MyApplication"
         android:allowBackup="true"
@@ -43,6 +47,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <!-- com.tuochebang.service.provider; -->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.tuochebang.service.provider"
@@ -153,12 +158,16 @@
             android:name=".ui.register.person.PersonRegisterActivity"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".ui.WebActivity"
+            android:screenOrientation="portrait"/>
+
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="837c2f44ed3508ad0172aaaa8a59aed5" />
+            android:value="bf18f5691683b75c99d75b021566f2a1" />
         <service android:name="com.amap.api.location.APSService" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
     </application>
 </manifest>

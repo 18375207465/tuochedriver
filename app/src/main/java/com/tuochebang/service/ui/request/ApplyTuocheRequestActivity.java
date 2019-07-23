@@ -42,7 +42,7 @@ public class ApplyTuocheRequestActivity extends BaseActivity {
     private DataLoadingView mDataLoadingView;
     private XListView mListRequest;
     private String mRequestId;
-    private Trailer mSelectName;
+    private Trailer mSelectName;//单子
     private SwipeRefreshLayout mSwipRefreshList;
     private Toolbar mToolBar;
 
@@ -67,7 +67,7 @@ public class ApplyTuocheRequestActivity extends BaseActivity {
             } else if (ApplyTuocheRequestActivity.this.mSelectName.getUnfinish() > 0) {
                 ToastUtil.showMessage(MyApplication.getInstance(), "还有未完成的订单，暂不能接单");
             } else {
-                ApplyTuocheRequestActivity.this.onBtnApply();
+                ApplyTuocheRequestActivity.this.onBtnApply();//提交请求
             }
         }
     }

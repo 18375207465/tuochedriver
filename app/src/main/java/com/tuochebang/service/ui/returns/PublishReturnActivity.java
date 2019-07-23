@@ -16,6 +16,7 @@ import com.framework.app.component.utils.ActivityUtil;
 import com.framework.app.component.utils.BroadCastUtil;
 import com.framework.app.component.utils.ToastUtil;
 import com.tuochebang.service.R;
+import com.tuochebang.service.add.DingWei;
 import com.tuochebang.service.app.MyApplication;
 import com.tuochebang.service.base.BaseActivity;
 import com.tuochebang.service.constant.AppConstant.BroadCastAction;
@@ -42,6 +43,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * 发布任务界面
+ */
 public class PublishReturnActivity extends BaseActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     public static final String EXTRAS_INFO = "extras_info";
     public static String EXTRAS_TYPE = LocationMapActivity.EXTRAS_TYPE;
@@ -82,7 +86,7 @@ public class PublishReturnActivity extends BaseActivity implements DatePickerDia
         }
 
         public void onClick(View v) {
-            PublishReturnActivity.this.mTypeLoc = 0;
+            PublishReturnActivity.this.mTypeLoc = 0;//起点选择
             PublishReturnActivity.this.onBtnSelectLocation();
         }
     }
@@ -225,7 +229,17 @@ public class PublishReturnActivity extends BaseActivity implements DatePickerDia
         initToolBar();
         initView();
         initListener();
-        initData();
+        initData();//初始化定位经纬度
+
+       //
+        new DingWei(this, savedInstanceState) {
+            @Override
+            public void addressName(String name,LatLng latLng) {
+                TextView textView=(TextView)findViewById(R.id.tcb_return_begin_loc_txt);
+                textView.setText(name);
+                mLatlng=latLng;
+            }
+        }.getAddressName();
     }
 
     private void getIntentExtras() {
@@ -262,7 +276,7 @@ public class PublishReturnActivity extends BaseActivity implements DatePickerDia
     }
 
     private void initListener() {
-        this.mRlBegin.setOnClickListener(new C07512());
+        this.mRlBegin.setOnClickListener(new C07512());//选择起点
         this.mRlEnd.setOnClickListener(new C07523());
         this.mRlTime.setOnClickListener(new C07534());
         this.mRlType.setOnClickListener(new C07545());
@@ -275,7 +289,7 @@ public class PublishReturnActivity extends BaseActivity implements DatePickerDia
     }
 
     private void initView() {
-        this.mRlBegin = (RelativeLayout) findViewById(R.id.tcb_return_begin_loc_rl);
+        this.mRlBegin = (RelativeLayout) findViewById(R.id.tcb_return_begin_loc_rl);//起点
         this.mRlEnd = (RelativeLayout) findViewById(R.id.tcb_return_end_loc_rl);
         this.mTxtBeginLoc = (TextView) findViewById(R.id.tcb_return_begin_loc_txt);
         this.mTxtEndLoc = (TextView) findViewById(R.id.tcb_return_end_loc_txt);
@@ -301,6 +315,9 @@ public class PublishReturnActivity extends BaseActivity implements DatePickerDia
 
     }
 
+    /**
+     * 提交数据
+     */
     private void httpPublishReturnRequest() {
         RequestQueue queue = NoHttp.newRequestQueue();
         queue.add(0, new PublishReturnRequest(ServerUrl.getInst().PUBLISH_RETURN_REQUEST(), RequestMethod.POST, this.mTypeId, this.mTxtTime.getText().toString(), this.mTxtBeginLoc.getText().toString(), this.mTxtEndLoc.getText().toString(), this.mLatlng.latitude, this.mLatlng.longitude, this.mEndLatLng.latitude, this.mEndLatLng.longitude), new C07589());

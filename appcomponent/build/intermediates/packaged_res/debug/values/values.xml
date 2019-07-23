@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr format="color" name="tl_divider_color"/>
+    <attr format="dimension" name="tl_divider_padding"/>
+    <attr format="dimension" name="tl_divider_width"/>
+    <attr format="integer" name="tl_indicator_anim_duration"/>
+    <attr format="boolean" name="tl_indicator_anim_enable"/>
+    <attr format="boolean" name="tl_indicator_bounce_enable"/>
+    <attr format="color" name="tl_indicator_color"/>
+    <attr format="dimension" name="tl_indicator_corner_radius"/>
+    <attr format="enum" name="tl_indicator_gravity">
+        <enum name="TOP" value="48"/>
+        <enum name="BOTTOM" value="80"/>
+    </attr>
+    <attr format="dimension" name="tl_indicator_height"/>
+    <attr format="dimension" name="tl_indicator_margin_bottom"/>
+    <attr format="dimension" name="tl_indicator_margin_left"/>
+    <attr format="dimension" name="tl_indicator_margin_right"/>
+    <attr format="dimension" name="tl_indicator_margin_top"/>
+    <attr format="enum" name="tl_indicator_style">
+        <enum name="NORMAL" value="0"/>
+        <enum name="TRIANGLE" value="1"/>
+        <enum name="BLOCK" value="2"/>
+    </attr>
+    <attr format="dimension" name="tl_indicator_width"/>
+    <attr format="boolean" name="tl_indicator_width_equal_title"/>
+    <attr format="dimension" name="tl_tab_padding"/>
+    <attr format="boolean" name="tl_tab_space_equal"/>
+    <attr format="dimension" name="tl_tab_width"/>
+    <attr format="boolean" name="tl_textAllCaps"/>
+    <attr format="enum" name="tl_textBold">
+        <enum name="NONE" value="0"/>
+        <enum name="SELECT" value="1"/>
+        <enum name="BOTH" value="2"/>
+    </attr>
+    <attr format="color" name="tl_textSelectColor"/>
+    <attr format="color" name="tl_textUnselectColor"/>
+    <attr format="dimension" name="tl_textsize"/>
+    <attr format="color" name="tl_underline_color"/>
+    <attr format="enum" name="tl_underline_gravity">
+        <enum name="TOP" value="48"/>
+        <enum name="BOTTOM" value="80"/>
+    </attr>
+    <attr format="dimension" name="tl_underline_height"/>
+    <bool name="cpv_default_anim_autostart">false</bool>
+    <bool name="cpv_default_is_indeterminate">false</bool>
+    <color name="bg_xlistview_empty_view">#ffffff</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="common_blue">#57d5e8</color>
+    <color name="common_line_color">#e9e9e9</color>
+    <color name="common_puple">#C4A1FA</color>
+    <color name="common_yellow">#ffe401</color>
+    <color name="cpv_default_color">#2196F3</color>
+    <color name="txt_common_red_color">#ff6666</color>
+    <color name="txt_info_color">#a6a6a6</color>
+    <color name="txt_title_color">#333333</color>
+    <color name="xlistview_empty_view_txt_color">#808080</color>
+    <color name="xlistview_refres_time_color">#868686</color>
+    <color name="xlistview_title_color">#000000</color>
+    <declare-styleable name="CircularProgressView">
+        <attr format="float" name="cpv_progress"/>
+        <attr format="float" name="cpv_maxProgress"/>
+        <attr format="integer" name="cpv_animDuration"/>
+        <attr format="integer" name="cpv_animSwoopDuration"/>
+        <attr format="integer" name="cpv_animSyncDuration"/>
+        <attr format="color" name="cpv_color"/>
+        <attr format="dimension" name="cpv_thickness"/>
+        <attr format="boolean" name="cpv_indeterminate"/>
+        <attr format="boolean" name="cpv_animAutostart"/>
+        <attr format="integer" name="cpv_animSteps"/>
+        <attr format="float" name="cpv_startAngle"/>
+    </declare-styleable>
+    <declare-styleable name="CommonTabLayout">
+        <!-- indicator -->
+        <attr name="tl_indicator_color"/>
+        <attr name="tl_indicator_height"/>
+        <attr name="tl_indicator_width"/>
+        <attr name="tl_indicator_margin_left"/>
+        <attr name="tl_indicator_margin_top"/>
+        <attr name="tl_indicator_margin_right"/>
+        <attr name="tl_indicator_margin_bottom"/>
+        <attr name="tl_indicator_corner_radius"/>
+        <attr name="tl_indicator_gravity"/>
+        <attr name="tl_indicator_style"/>
+        <attr name="tl_indicator_anim_enable"/>
+        <attr name="tl_indicator_anim_duration"/>
+        <attr name="tl_indicator_bounce_enable"/>
+
+        <!-- underline -->
+        <attr name="tl_underline_color"/>
+        <attr name="tl_underline_height"/>
+        <attr name="tl_underline_gravity"/>
+
+        <!-- divider -->
+        <attr name="tl_divider_color"/>
+        <attr name="tl_divider_width"/>
+        <attr name="tl_divider_padding"/>
+
+        <!-- tab -->
+        <attr name="tl_tab_padding"/>
+        <attr name="tl_tab_space_equal"/>
+        <attr name="tl_tab_width"/>
+
+        <!-- title -->
+        <attr name="tl_textsize"/>
+        <attr name="tl_textSelectColor"/>
+        <attr name="tl_textUnselectColor"/>
+        <attr name="tl_textBold"/>
+        <attr name="tl_textAllCaps"/>
+
+        <!-- icon -->
+        <!-- 设置icon宽度 -->
+        <attr format="dimension" name="tl_iconWidth"/>
+        <!-- 设置icon高度 -->
+        <attr format="dimension" name="tl_iconHeight"/>
+        <!-- 设置icon是否可见 -->
+        <attr format="boolean" name="tl_iconVisible"/>
+        <!-- 设置icon显示位置,对应Gravity中常量值 -->
+        <attr format="enum" name="tl_iconGravity">
+            <enum name="LEFT" value="3"/>
+            <enum name="TOP" value="48"/>
+            <enum name="RIGHT" value="5"/>
+            <enum name="BOTTOM" value="80"/>
+        </attr>
+        <!-- 设置icon与文字间距 -->
+        <attr format="dimension" name="tl_iconMargin"/>
+
+    </declare-styleable>
+    <declare-styleable name="LetterSpacingTextView">
+        <attr format="float" name="textSpacing"/>
+        <attr format="string" name="text"/>
+    </declare-styleable>
+    <declare-styleable name="MsgView">
+        <!-- 圆角矩形背景色 -->
+        <attr format="color" name="mv_backgroundColor"/>
+        <!-- 圆角弧度,单位dp-->
+        <attr format="dimension" name="mv_cornerRadius"/>
+        <!-- 圆角弧度,单位dp-->
+        <attr format="dimension" name="mv_strokeWidth"/>
+        <!-- 圆角边框颜色-->
+        <attr format="color" name="mv_strokeColor"/>
+        <!-- 圆角弧度是高度一半-->
+        <attr format="boolean" name="mv_isRadiusHalfHeight"/>
+        <!-- 圆角矩形宽高相等,取较宽高中大值-->
+        <attr format="boolean" name="mv_isWidthHeightEqual"/>
+    </declare-styleable>
+    <declare-styleable name="PercentageRing">
+        <attr format="integer" name="radius"/>
+        <attr format="color" name="circleBackground"/>
+        <attr format="color" name="ringColor"/>
+    </declare-styleable>
+    <declare-styleable name="SegmentTabLayout">
+        <!-- indicator -->
+        <attr name="tl_indicator_color"/>
+        <attr name="tl_indicator_height"/>
+        <attr name="tl_indicator_margin_left"/>
+        <attr name="tl_indicator_margin_top"/>
+        <attr name="tl_indicator_margin_right"/>
+        <attr name="tl_indicator_margin_bottom"/>
+        <attr name="tl_indicator_corner_radius"/>
+        <attr name="tl_indicator_anim_enable"/>
+        <attr name="tl_indicator_anim_duration"/>
+        <attr name="tl_indicator_bounce_enable"/>
+
+        <!-- divider -->
+        <attr name="tl_divider_color"/>
+        <attr name="tl_divider_width"/>
+        <attr name="tl_divider_padding"/>
+
+        <!-- tab -->
+        <attr name="tl_tab_padding"/>
+        <attr name="tl_tab_space_equal"/>
+        <attr name="tl_tab_width"/>
+
+        <!-- title -->
+        <attr name="tl_textsize"/>
+        <attr name="tl_textSelectColor"/>
+        <attr name="tl_textUnselectColor"/>
+        <attr name="tl_textBold"/>
+        <attr name="tl_textAllCaps"/>
+
+        <attr format="color" name="tl_bar_color"/>
+        <attr format="color" name="tl_bar_stroke_color"/>
+        <attr format="dimension" name="tl_bar_stroke_width"/>
+
+    </declare-styleable>
+    <declare-styleable name="SlidingTabLayout">
+        <!-- indicator -->
+        <attr name="tl_indicator_color"/>
+        <attr name="tl_indicator_height"/>
+        <attr name="tl_indicator_width"/>
+        <attr name="tl_indicator_margin_left"/>
+        <attr name="tl_indicator_margin_top"/>
+        <attr name="tl_indicator_margin_right"/>
+        <attr name="tl_indicator_margin_bottom"/>
+        <attr name="tl_indicator_corner_radius"/>
+        <attr name="tl_indicator_gravity"/>
+        <attr name="tl_indicator_style"/>
+        <attr name="tl_indicator_width_equal_title"/>
+
+        <!-- underline -->
+        <attr name="tl_underline_color"/>
+        <attr name="tl_underline_height"/>
+        <attr name="tl_underline_gravity"/>
+
+        <!-- divider -->
+        <attr name="tl_divider_color"/>
+        <attr name="tl_divider_width"/>
+        <attr name="tl_divider_padding"/>
+
+        <!-- tab -->
+        <attr name="tl_tab_padding"/>
+        <attr name="tl_tab_space_equal"/>
+        <attr name="tl_tab_width"/>
+
+        <!-- title -->
+        <attr name="tl_textsize"/>
+        <attr name="tl_textSelectColor"/>
+        <attr name="tl_textUnselectColor"/>
+        <attr name="tl_textBold"/>
+        <attr name="tl_textAllCaps"/>
+
+    </declare-styleable>
+    <dimen name="cpv_default_thickness">4dp</dimen>
+    <dimen name="xlistview_empty_view_txt_size">16sp</dimen>
+    <dimen name="xlistview_refresh_time_size">12sp</dimen>
+    <dimen name="xlistview_title_size">14sp</dimen>
+    <drawable name="color_ffffff">#ffffff</drawable>
+    <integer name="cpv_default_anim_duration">4000</integer>
+    <integer name="cpv_default_anim_steps">3</integer>
+    <integer name="cpv_default_anim_swoop_duration">5000</integer>
+    <integer name="cpv_default_anim_sync_duration">500</integer>
+    <integer name="cpv_default_max_progress">100</integer>
+    <integer name="cpv_default_progress">0</integer>
+    <integer name="cpv_default_start_angle">-90</integer>
+    <string name="app_name">AppComponent</string>
+    <string name="pull_to_refresh_footer_loading">正在加载\u2026</string>
+    <string name="pull_to_refresh_footer_normal">上拉加载更多</string>
+    <string name="pull_to_refresh_footer_ready">松开后加载</string>
+    <string name="pull_to_refresh_header_normal">下拉刷新</string>
+    <string name="pull_to_refresh_header_ready">松开后刷新</string>
+    <string name="pull_to_refresh_header_refreshing">正在刷新\u2026</string>
+    <string name="txt_click_here_to_reload">点击此处重新加载</string>
+    <string name="xlistview_footer_hint_loading">正在加载\u2026</string>
+    <string name="xlistview_footer_hint_normal"/>
+    <string name="xlistview_footer_hint_ready">松开后加载</string>
+    <string name="xlistview_footer_newest_time">1分钟前</string>
+    <string name="xlistview_header_hint_normal">下拉即可刷新</string>
+    <string name="xlistview_header_hint_ready">松开后刷新</string>
+    <string name="xlistview_header_hint_refreshing">正在刷新\u2026</string>
+    <string name="xlistview_header_hint_title">Wothing</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <style name="AppBaseTheme" parent="android:Theme.Light"/>
+    <style name="AppTheme" parent="AppBaseTheme"/>
+    <style name="DialogMainFullScreen" parent="Base.Theme.AppCompat.DialogWhenLarge">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/color_ffffff</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>

@@ -49,7 +49,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="app_name">拖车帮</string>
+    <string name="app_name">拖车帮(司机)</string>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
     <string name="auth_google_play_services_client_google_display_name">Google</string>
     <string name="dialog_negative">取消</string>

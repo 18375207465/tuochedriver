@@ -1,5 +1,6 @@
 package com.tuochebang.service.ui.setting;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.framework.app.component.utils.ActivityUtil;
 import com.framework.app.component.utils.BroadCastUtil;
 import com.framework.app.component.utils.ToastUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -19,11 +21,16 @@ import com.tuochebang.service.app.MyApplication;
 import com.tuochebang.service.base.BaseActivity;
 import com.tuochebang.service.cache.FileUtil;
 import com.tuochebang.service.constant.AppConstant.BroadCastAction;
+import com.tuochebang.service.request.base.ServerUrl;
+import com.tuochebang.service.ui.WebActivity;
 import com.tuochebang.service.util.AndroidUtil;
 import com.tuochebang.service.widget.SwitchView.OnStateChangedListener;
 
 import java.text.DecimalFormat;
 
+/**
+ * 设置界面
+ */
 public class SettingActivity extends BaseActivity {
     private Button mBtnLogout;
     private Switch mOrderSwitchView;
@@ -32,6 +39,7 @@ public class SettingActivity extends BaseActivity {
     private RelativeLayout mRlFeedBack;
     private Toolbar mToolBar;
     private TextView mTxtClearCache;
+    private RelativeLayout seting_server;
 
     /* renamed from: com.tuochebang.service.ui.setting.SettingActivity$1 */
     class C07771 implements OnClickListener {
@@ -133,6 +141,27 @@ public class SettingActivity extends BaseActivity {
     }
 
     private void initListener() {
+        mRlAbout.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString(WebActivity.FLAG_URL, "http://api.tuocb.com/tuochebang/client/v1.0/activity/aboutc");//路径
+                bundle.putString(WebActivity.FLAG_TITLE, "关于我们");
+//                Intent intent=new Intent(SettingActivity.this,WebActivity.class);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+                ActivityUtil.next(SettingActivity.this, WebActivity.class, bundle);
+            }
+        });
+        seting_server.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString(WebActivity.FLAG_URL, "http://api.tuocb.com/tuochebang/client/v1.0/activity/fuwuxieyi");
+                bundle.putString(WebActivity.FLAG_TITLE, "服务协议");
+                ActivityUtil.next(SettingActivity.this, WebActivity.class, bundle);
+            }
+        });
         this.mRlClearCache.setOnClickListener(new C07771());
         this.mBtnLogout.setOnClickListener(new C07782());
         this.mRlFeedBack.setOnClickListener(new C07793());
@@ -156,6 +185,7 @@ public class SettingActivity extends BaseActivity {
         this.mTxtClearCache = (TextView) findViewById(R.id.tcb_clear_cache_txt);
         this.mBtnLogout = (Button) findViewById(R.id.bt_log_out);
         this.mOrderSwitchView = (Switch) findViewById(R.id.switch_order_view);
+        seting_server = (RelativeLayout) findViewById(R.id.seting_server);
         this.mOrderSwitchView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

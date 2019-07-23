@@ -265,6 +265,7 @@ public class PersonRegisterActivity extends BaseActivity {
                 Iterator it = images.iterator();
                 while (it.hasNext()) {
                     uploadImage((String) it.next());
+                    Log.i("Flog","选择照片返回路径="+images);
                 }
             }
         }
@@ -300,4 +301,6 @@ public class PersonRegisterActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
     }
+
+    
 }

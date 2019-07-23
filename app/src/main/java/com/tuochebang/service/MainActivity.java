@@ -2,12 +2,21 @@ package com.tuochebang.service;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.v4.content.FileProvider;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -24,8 +33,12 @@ import com.framework.app.component.utils.ToastUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.tuochebang.service.add.AnZhuangAPK;
+import com.tuochebang.service.add.HttpDownload;
+import com.tuochebang.service.add.HttpGet;
 import com.tuochebang.service.app.MyApplication;
 import com.tuochebang.service.base.BaseActivity;
+import com.tuochebang.service.constant.AppConfig;
 import com.tuochebang.service.constant.AppConstant.BroadCastAction;
 import com.tuochebang.service.request.base.ServerUrl;
 import com.tuochebang.service.request.entity.LoginInfo;
@@ -48,14 +61,23 @@ import com.tuochebang.service.view.PullToZoomScrollView;
 import com.tuochebang.service.widget.RequestRobDialog;
 import com.tuochebang.service.widget.RequestRobDialog.DialogButtonInterface;
 import com.tuochebang.service.widget.RequestRobDialog.DialogResult;
+import com.umeng.analytics.MobclickAgent;
+import com.yanzhenjie.nohttp.Headers;
 import com.yanzhenjie.nohttp.NoHttp;
 import com.yanzhenjie.nohttp.RequestMethod;
+import com.yanzhenjie.nohttp.download.DownloadListener;
+import com.yanzhenjie.nohttp.download.DownloadRequest;
 import com.yanzhenjie.nohttp.rest.OnResponseListener;
+import com.yanzhenjie.nohttp.rest.Request;
 import com.yanzhenjie.nohttp.rest.RequestQueue;
 import com.yanzhenjie.nohttp.rest.Response;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+import org.json.JSONObject;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.internal.http.CallServerInterceptor;
+
+import java.io.File;
 import java.util.Random;
 
 public class MainActivity extends BaseActivity {
@@ -71,7 +93,7 @@ public class MainActivity extends BaseActivity {
     private RelativeLayout mRlUserAuth;
     private RelativeLayout mRlUserFindReturn;
     private RelativeLayout mRlUserMessage;
-    private RelativeLayout mRlUserPullReturn;
+    private RelativeLayout mRlUserPullReturn;//发布任务
     private RelativeLayout mRlUserRequest;
     private RelativeLayout mRlUserReturns;
     private RelativeLayout mRlUserSetting;
@@ -201,6 +223,9 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         if (!MyApplication.getInstance().isUserLogin()) {
             ActivityUtil.next(this, LoginActivity.class);
+        }else {
+
+            jianChaGengXin();//更新
         }
         //textPushDialog();
         setCouldDoubleBackExit(true);
@@ -222,8 +247,8 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.ll_user_info).setOnClickListener(new C06333());
         this.mRlUserReturns.setOnClickListener(new C06344());
         this.mImgSetting.setOnClickListener(new C06355());
-        this.mRlUserPullReturn.setOnClickListener(new C06366());
-        this.mRlUserFindReturn.setOnClickListener(new C06377());
+        this.mRlUserPullReturn.setOnClickListener(new C06366());//发布任务
+        this.mRlUserFindReturn.setOnClickListener(new C06377());//待抢订单
         this.mRlTuocheManage.setOnClickListener(new C06388());
         this.mRlUserAuth.setOnClickListener(new C06399());
         this.mRlUserSetting.setOnClickListener(new OnClickListener() {
@@ -416,4 +441,115 @@ public class MainActivity extends BaseActivity {
             LocalBroadcastManager.getInstance(this).unregisterReceiver(this.mUserStatuChangeReceiver);
         }
     }
+
+
+    String apkurl = "";//下载apk路径
+    private void jianChaGengXin(){
+        new HttpGet() {
+            @Override
+            public void startHttp(int what) {
+
+            }
+
+            @Override
+            public void succeedHttp(int what, Response<String> response) {
+                int bbh=0;
+                String bbmc = "";
+                int code = 0;//当前版本号
+                String name = "";
+                PackageManager manager = getPackageManager();
+
+                try {
+                    //获取当前版本信息
+                    PackageInfo info = manager.getPackageInfo(getPackageName(), 0);
+                    code = info.versionCode;
+                    name = info.versionName;
+
+                    //解析数据
+                    String s=""+response.get();
+                    JSONObject jsonObject=new JSONObject(s);
+                    String c=""+jsonObject.get("code");
+                    if (c.equals("0")){
+                        JSONObject jsonObject1=jsonObject.getJSONObject("data");
+                        bbmc=jsonObject1.getString("bbmc");
+                        bbh=jsonObject1.getInt("bbh");
+                        apkurl=jsonObject1.getString("apkurl");
+
+//                        bbh=1611;//返回的版本号
+//                        bbmc="1.7.0";//版本名称
+
+                        if (bbh>code){
+                            new AlertDialog.Builder(MainActivity.this)
+                                    .setTitle("更新版本："+bbmc)
+                                    .setMessage("当前版本"+name+"  即将更新:"+bbmc)
+                                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            new HttpDownload(MainActivity.this).download(apkurl);//下载更新
+                                        }
+                                    }).setCancelable(true)
+                                    .create()
+                                    .show();
+                        }
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void failedHttp(int what, Response<String> response) {
+
+            }
+
+            @Override
+            public void finishHttp(int what) {
+
+            }
+        }.get("http://api.tuocb.com/tuochebang/rest/client/v1.0/user/apk/0");
+    }
+
+
+    private void installApk(String p) {
+
+        File apkfile = new File(p);
+        if (!apkfile.exists())
+        {
+            return;
+        }
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        // 通过Intent安装APK文件
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N ){//Build.VERSION_CODES.N
+            //参数1 上下文, 参数2 Provider主机地址 和配置文件中保持一致   参数3  共享的文件
+            Uri apkUri =
+                    FileProvider.getUriForFile(MainActivity.this, "com.tuochebang.service.provider", apkfile);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
+            MainActivity.this.startActivity(intent);
+            System.exit(0);
+        }else{
+
+            intent.setDataAndType(Uri.fromFile(apkfile), "application/vnd.android.package-archive");
+            MainActivity.this.startActivity(intent);
+            System.exit(0);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+
 }

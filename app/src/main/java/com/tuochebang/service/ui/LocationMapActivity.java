@@ -23,6 +23,7 @@ import com.amap.api.maps2d.model.CameraPosition;
 import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.MarkerOptions;
 import com.amap.api.services.core.LatLonPoint;
+import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.GeocodeSearch.OnGeocodeSearchListener;
@@ -34,6 +35,11 @@ import com.tuochebang.service.app.MyApplication;
 import com.tuochebang.service.base.BaseActivity;
 import com.tuochebang.service.ui.returns.SelectLocationActivity;
 
+import java.util.List;
+
+/**
+ * 高德地图界面
+ */
 public class LocationMapActivity extends BaseActivity implements AMapLocationListener, LocationSource, OnGeocodeSearchListener, OnCameraChangeListener {
     public static final String EXTRAS_ADDRESS = "extras_address";
     public static final String EXTRAS_LOC = "extras_loc";
@@ -211,8 +217,12 @@ public class LocationMapActivity extends BaseActivity implements AMapLocationLis
                 this.isReturn = false;
                 return;
             }
-            this.mAddress = result.getRegeocodeAddress().getFormatAddress() + "附近";
-            this.mAddress = this.mAddress.split(result.getRegeocodeAddress().getProvince() + result.getRegeocodeAddress().getCity() + result.getRegeocodeAddress().getDistrict())[1];
+//            this.mAddress = result.getRegeocodeAddress().getFormatAddress() + "附近";
+//            this.mAddress = this.mAddress.split(result.getRegeocodeAddress().getProvince() + result.getRegeocodeAddress().getCity() + result.getRegeocodeAddress().getDistrict())[1];
+            String cs=result.getRegeocodeAddress().getCity();//城市
+            String qu=result.getRegeocodeAddress().getDistrict();//区
+            List<PoiItem> list = result.getRegeocodeAddress().getPois();
+            this.mAddress=cs+qu+list.get(0)+"附近";
             this.mTxtLocText.setText(this.mAddress);
         }
     }

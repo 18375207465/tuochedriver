@@ -30,7 +30,7 @@ import com.yanzhenjie.nohttp.rest.RequestQueue;
 import com.yanzhenjie.nohttp.rest.Response;
 
 import java.util.List;
-
+//拖车请求页面详情
 public class WatingRequestItemView extends RelativeLayout {
     public static String TUOCHE_REQUEST_TIME_STATUS = "t";
     public static String TUOCHE_RETURN_DISTANCE_STATUS = "d";

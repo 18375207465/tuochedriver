@@ -23,6 +23,9 @@ import com.tuochebang.service.entity.TabEntity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 待抢订单
+ */
 public class WatingRequestActivity extends BaseActivity {
     private CommonPagerAdapter commonPagerAdapter;
     private WatingRequestItemView mDistance;
