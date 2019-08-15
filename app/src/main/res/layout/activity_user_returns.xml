@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-    <android.support.v7.widget.Toolbar android:id="@+id/toolbar" android:background="?attr/colorPrimary" android:layout_width="match_parent" android:layout_height="wrap_content" app:title="我的返程车" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:navigationIcon="@mipmap/icon_back_white" app:titleTextColor="@color/color_ffffff" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    <com.framework.app.component.view.CommonTabLayout android:id="@+id/tl_1" android:background="#ffffff" android:paddingTop="5dp" android:paddingBottom="5dp" android:layout_width="match_parent" android:layout_height="48dp" app:tl_divider_color="#dddddd" app:tl_divider_width="1dp" app:tl_indicator_anim_enable="true" app:tl_indicator_color="@color/txt_common_red_color" app:tl_indicator_height="3dp" app:tl_indicator_margin_left="40dp" app:tl_indicator_margin_right="40dp" app:tl_textSelectColor="@color/txt_common_red_color" app:tl_textUnselectColor="@color/txt_title_color" app:tl_underline_color="#dddddd" app:tl_underline_height="1dp"/>
-    <android.support.v4.view.ViewPager android:id="@+id/view_pager" android:layout_width="match_parent" android:layout_height="match_parent"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:navigationIcon="@mipmap/icon_back_white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="我的返程车"
+        app:titleTextColor="@color/color_ffffff" />
+
+    <com.framework.app.component.view.CommonTabLayout
+        android:id="@+id/tl_1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ffffff"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:tl_divider_color="#dddddd"
+        app:tl_divider_width="1dp"
+        app:tl_indicator_anim_enable="true"
+        app:tl_indicator_color="@color/txt_common_red_color"
+        app:tl_indicator_height="3dp"
+        app:tl_indicator_margin_left="40dp"
+        app:tl_indicator_margin_right="40dp"
+        app:tl_textSelectColor="@color/txt_common_red_color"
+        app:tl_textUnselectColor="@color/txt_title_color"
+        app:tl_underline_color="#dddddd"
+        app:tl_underline_height="1dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

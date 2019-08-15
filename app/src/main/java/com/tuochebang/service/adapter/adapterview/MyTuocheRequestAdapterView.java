@@ -10,9 +10,21 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.framework.app.component.utils.ActivityUtil;
+import com.framework.app.component.utils.BroadCastUtil;
 import com.tuochebang.service.R;
+import com.tuochebang.service.app.MyApplication;
+import com.tuochebang.service.base.BaseActivity;
+import com.tuochebang.service.constant.AppConstant;
+import com.tuochebang.service.request.base.ServerUrl;
 import com.tuochebang.service.request.entity.TuocheRequestInfo;
+import com.tuochebang.service.request.task.RobOrderRequest;
 import com.tuochebang.service.ui.request.ApplyTuocheRequestActivity;
+import com.tuochebang.service.ui.request.RobOrderSuccessActivity;
+import com.yanzhenjie.nohttp.NoHttp;
+import com.yanzhenjie.nohttp.RequestMethod;
+import com.yanzhenjie.nohttp.rest.OnResponseListener;
+import com.yanzhenjie.nohttp.rest.RequestQueue;
+import com.yanzhenjie.nohttp.rest.Response;
 
 public class MyTuocheRequestAdapterView extends RelativeLayout {
     private Context mContext;
@@ -61,8 +73,44 @@ public class MyTuocheRequestAdapterView extends RelativeLayout {
     }
 
     private void onBtnApply(TuocheRequestInfo info) {
-        Bundle bundle = new Bundle();
-        bundle.putString(ApplyTuocheRequestActivity.EXTRAS_REQUST_ID, info.getRequestId());
-        ActivityUtil.next((Activity) this.mContext, ApplyTuocheRequestActivity.class, bundle);
+        if (MyApplication.getInstance().getUserInfo().getUserType() == 0) { //Admin account
+            Bundle bundle = new Bundle();
+            bundle.putString(ApplyTuocheRequestActivity.EXTRAS_REQUST_ID, info.getRequestId());
+            ActivityUtil.next((Activity) this.mContext, ApplyTuocheRequestActivity.class, bundle);
+        } else {
+            driverApply(info.getRequestId());
+        }
     }
+
+
+    private void driverApply(String requestId) {
+        RequestQueue queue = NoHttp.newRequestQueue();
+        queue.add(0, new RobOrderRequest(ServerUrl.getInst().ROB_ORDER_REQUEST(), RequestMethod.POST, requestId, String.valueOf(MyApplication.getInstance().getUserInfo().getUserId())), new C07203());
+
+    }
+
+    class C07203 implements OnResponseListener<Object> {
+        C07203() {
+        }
+
+        public void onStart(int what) {
+            ((BaseActivity) getContext()).showCommonProgreessDialog("请稍后..");
+        }
+
+        public void onSucceed(int what, Response<Object> response) {
+            if (response.get() != null) {
+                ActivityUtil.next((Activity) getContext(), RobOrderSuccessActivity.class);
+                BroadCastUtil.sendBroadCast((Activity) getContext(), AppConstant.BroadCastAction.ROB_ORDER_SUCCESS);
+                ((Activity) getContext()).finish();
+            }
+        }
+
+        public void onFailed(int what, Response<Object> response) {
+        }
+
+        public void onFinish(int what) {
+            ((BaseActivity) getContext()).dismissCommonProgressDialog();
+        }
+    }
+
 }

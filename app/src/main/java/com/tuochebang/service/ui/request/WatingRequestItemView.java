@@ -18,11 +18,13 @@ import com.framework.app.component.utils.ActivityUtil;
 import com.framework.app.component.widget.DataLoadingView;
 import com.framework.app.component.widget.XListEmptyView;
 import com.framework.app.component.widget.XListView;
+import com.luck.picture.lib.tools.ScreenUtils;
 import com.tuochebang.service.R;
 import com.tuochebang.service.adapter.TuocheRequestListAdapter;
 import com.tuochebang.service.request.base.ServerUrl;
 import com.tuochebang.service.request.entity.TuocheRequestInfo;
 import com.tuochebang.service.request.task.GetUserWatingRequest;
+import com.tuochebang.service.util.AndroidUtil;
 import com.yanzhenjie.nohttp.NoHttp;
 import com.yanzhenjie.nohttp.RequestMethod;
 import com.yanzhenjie.nohttp.rest.OnResponseListener;
@@ -30,6 +32,7 @@ import com.yanzhenjie.nohttp.rest.RequestQueue;
 import com.yanzhenjie.nohttp.rest.Response;
 
 import java.util.List;
+
 //拖车请求页面详情
 public class WatingRequestItemView extends RelativeLayout {
     public static String TUOCHE_REQUEST_TIME_STATUS = "t";
@@ -170,4 +173,12 @@ public class WatingRequestItemView extends RelativeLayout {
         }
 
     }
+
+//    @Override
+//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+//        int imageHeight = ScreenUtils.getScreenHeight(getContext());
+//        heightMeasureSpec = MeasureSpec.makeMeasureSpec(imageHeight,
+//                MeasureSpec.EXACTLY);
+//        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+//    }
 }

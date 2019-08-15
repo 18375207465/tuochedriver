@@ -45,4 +45,6 @@ public class CommonPagerAdapter extends PagerAdapter {
 	public void setViewList(List<View> viewList) {
 		mViewList = viewList;
 	}
+
+
 }
